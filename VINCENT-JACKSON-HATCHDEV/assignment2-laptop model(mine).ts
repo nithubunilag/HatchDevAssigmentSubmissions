@@ -76,7 +76,7 @@ class Laptop {
         switch(component) {
             case "screen":
                 previousVersion = this.screen.type;
-                this.screen.type = newVersion as DisplayType; // Casting to DisplayType
+                this.screen.type = newVersion as DisplayType;
                 break;
             case "nic":
                 previousVersion = this.nic.name;
@@ -87,8 +87,8 @@ class Laptop {
                 this.hardDisk.size = parseInt(newVersion);
                 break;
             case "keyboard":
-                previousVersion = this.keyboard[0].layout; // Capture previous keyboard layout
-                this.keyboard[0].layout = newVersion as KeyBoardLayout; // Casting to KeyBoardLayout
+                previousVersion = this.keyboard[0].layout;
+                this.keyboard[0].layout = newVersion as KeyBoardLayout;
                 break;
             default:
                 console.log("Invalid component to update");
@@ -124,10 +124,8 @@ class Laptop {
     }
 }
 
-// Define a union type for components that can be updated
 type UpdatableComponent = "screen" | "nic" | "hardDisk" | "keyboard";
 
-// Create components
 const display = new Display();
 display.size = 15.6;
 display.type = "lcd";
@@ -138,29 +136,22 @@ const hd = new HardDisk();
 hd.type = "ssd";
 hd.size = 512;
 
-// Update the initial keyboard layout to "AZERTY"
 const keyboard1 = new KeyBoard("in-built");
 keyboard1.layout = "Azerty";
 
-// Create a laptop instance
 const myLaptop = new Laptop(
-    "x64", // bit
+    "x64", 
     display,
     nic,
     hd,
-    [keyboard1] // keyBoards
+    [keyboard1]
 );
 
-// Display initial components
 myLaptop.displayComponents();
-
-// Using laptop methods
 myLaptop.switchOn();
 myLaptop.update("screen", "amoled");
 myLaptop.update("nic", "Mellanox ConnectX-3 Pro");
 myLaptop.update("hardDisk", "1024");
-myLaptop.update("keyboard", "Qwerty"); // Update keyboard layout from AZERTY to QWERTY
-
-// Display updated components
+myLaptop.update("keyboard", "Qwerty");
 myLaptop.displayUpdatedComponents();
 myLaptop.shutDown();
