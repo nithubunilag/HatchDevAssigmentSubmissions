@@ -39,7 +39,7 @@ class laptop {
     console.log(`Hey, Your machine has been turned on!!!`);
   }
 
-  update(version: number) {
+  updateOs(version: number) {
     this.operatingSystem.version = version;
     console.log(
       `Hey, Your OS has been updated to ${this.operatingSystem.kind} version ${this.operatingSystem.version}`
