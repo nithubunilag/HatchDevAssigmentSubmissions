@@ -124,7 +124,7 @@ const nitLap = new Laptop(
   osType.version
 );
 
-// ====================== Update osType ===========================
+// ======================Uncomment to Update osType ===========================
 // nitLap.update(updatedOsType, updatedNic, updatedOsType.version);
 // ================================================================
 
