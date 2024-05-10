@@ -1,6 +1,6 @@
 // Project 1: Address Book System
 
-/** Implement an address book system using OOP principles
+/* Implement an address book system using OOP principles
  * Each contact should be represented as an object with attributes like name, phone number, and address.
  * Demonstrate inheritance and encapsulation in your implementation.
  */
