@@ -26,6 +26,21 @@ class LinkedList<T> {
             currentNode.next = node;
         }
     }
+    delete(data: T) {
+        if (!this.head) return false;
+        // check if the data is in the linked list
+        let currentNode = this.head;
+        if(currentNode){
+            while(currentNode.next){
+                if(currentNode.next.data == data){
+                    // remove the node from the linked list
+                    const newNextNode = currentNode.next.next
+                    currentNode.next = newNextNode
+                }
+                currentNode = currentNode.next
+            }
+        }
+    }
     prepend(data: T) {
         const node = new LNode(data);
         node.next = this.head;
@@ -62,9 +77,11 @@ class LinkedList<T> {
 
 const ll = new LinkedList<number>();
 ll.add(10);
-ll.add(10);
+ll.add(100);
 ll.add(20);
 ll.add(30);
 ll.add(40)
 ll.prepend(50)
+console.log("deleting...")
+ll.delete(10)
 ll.search(50)

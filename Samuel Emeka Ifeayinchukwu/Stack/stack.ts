@@ -23,4 +23,7 @@ export default class Stack<T> implements IStack<T> {
     public size(){
         return this.storage.length
     }
+    public data() {
+        return [...this.storage];
+    }
 }
