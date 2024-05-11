@@ -1,4 +1,4 @@
-# HatchDevAssigmentSubmissions
+# HatchDevAssignmentSubmissions
 Hatchdev 2.0 assignment submissions
 
 ## Steps
