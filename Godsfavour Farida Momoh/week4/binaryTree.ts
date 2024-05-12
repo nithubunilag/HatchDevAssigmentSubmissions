@@ -1,3 +1,16 @@
+class TreeNode<T> {
+    value: T;
+    left: TreeNode<T> | null;
+    right: TreeNode<T> | null;
+
+    constructor(value: T) {
+        this.value = value;
+        this.left = null;
+        this.right = null;
+    }
+}
+
+
 class BinaryTree<T> {
     root: TreeNode<T> | null;
 
@@ -63,16 +76,44 @@ class BinaryTreeArray<T> {
     treeArray: (T | null)[];
 
     constructor() {
-        this.treeArray = [];
-    }
+        this.treeArray = [null]; 
+    } 
 
     insert(value: T) {
-        this.treeArray.push(value);
+        if (this.treeArray.length === 1) {
+            this.treeArray.push(value);
+        } else {
+            let i = 1;
+            while (true) {
+                if (!this.treeArray[i]) {
+                    this.treeArray[i] = value; 
+                    break;
+                }
+                i++;
+            }
+        }
     }
 
     search(value: T): boolean {
         return this.treeArray.includes(value);
     }
+
+    inorderTraversal(index: number = 1, result: T[] = []): T[] {
+        if (index < this.treeArray.length) {
+            if (this.treeArray[index * 2]) { 
+                this.inorderTraversal(index * 2, result);
+            }
+            if (this.treeArray[index]) { 
+                result.push(this.treeArray[index]);
+            }
+            if (this.treeArray[index * 2 + 1]) { 
+                this.inorderTraversal(index * 2 + 1, result);
+            }
+        }
+        return result;
+    }
+}
+
 
     inorderTraversal(): T[] {
         return this.treeArray.filter(node => node !== null) as T[];
