@@ -7,7 +7,7 @@ class LNode<T> {
     }
 }
 
-class LinkedList<T> {
+export class LinkedList<T> {
     head: LNode<T> | null;
 
     constructor() {
@@ -29,9 +29,8 @@ class LinkedList<T> {
     delete(data: T) {
         if (!this.head) return false;
         // check if the data is in the linked list
-        let currentNode = this.head;
-        if(currentNode){
-            while(currentNode.next){
+        let currentNode: LNode<T> | null = this.head;
+            while(currentNode?.next){
                 if(currentNode.next.data == data){
                     // remove the node from the linked list
                     const newNextNode = currentNode.next.next
@@ -39,7 +38,7 @@ class LinkedList<T> {
                 }
                 currentNode = currentNode.next
             }
-        }
+        
     }
     prepend(data: T) {
         const node = new LNode(data);
@@ -75,13 +74,3 @@ class LinkedList<T> {
 }
 
 
-const ll = new LinkedList<number>();
-ll.add(10);
-ll.add(100);
-ll.add(20);
-ll.add(30);
-ll.add(40)
-ll.prepend(50)
-console.log("deleting...")
-ll.delete(10)
-ll.search(50)
