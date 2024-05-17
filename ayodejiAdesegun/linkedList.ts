@@ -26,8 +26,8 @@ class LinkedList<T> {
         };
     };
 };
-const l = new LinkedList<number>();
-l.add(1);
-l.add(2);
-l.add(3);
-console.log(l);
+const linkedList = new LinkedList<number>();
+linkedList.add(1);
+linkedList.add(2);
+linkedList.add(3);
+console.log(linkedList);
