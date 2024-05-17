@@ -10,8 +10,8 @@ class DLNode<T>{
 class DoublyLinkedList<T>{
     head: DLNode<T>;
     add(val:T, position?:number){
-        // Adding to the beginning
         const newNode = new DLNode(val);
+         // Adding to the beginning
         if(!this.head){
             this.head = newNode;
             return;
