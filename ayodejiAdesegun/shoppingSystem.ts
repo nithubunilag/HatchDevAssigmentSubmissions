@@ -5,36 +5,24 @@ class shoppingSystem {
     }
 };
 class shoppingCart {
-    sausage: Sausage;
-    vodka: Vodka;
-    noodles: Noodles;
-    constructor(sausage: Sausage, vodka: Vodka, noodles: Noodles) {
-        this.sausage = Sausage;
-        this.vodka = Vodka;
-        this.noodles = Noodles;
-    }
-};
-type sausageKind = "Gala" | "Rite" | "Bigi" | "SuperBite";
-class Sausage {
-    kind: sausageKind
-    constructor(kind: sausageKind) {
-        this.kind = kind;
-    };
-    add() {
+    
+    constructor() {
 
     }
 };
-class Vodka {
+
+class Product {
 
 };
-type noodlesKind = "Indomie" | "Golden Penny" | "Chiki Chiki";
-class Noodles {
-    noodles: noodlesKind
-    constructor(noodles: noodlesKind) {
-        this.noodles = noodles;
-    }
+class CashPayment {
 
 };
-class Always {
+class CreditCardPayment {
+
+};
+class Catalogue {
+
+};
+class Shop {
 
 };
