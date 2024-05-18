@@ -4,99 +4,113 @@ class CircularDLinkedList<T> extends DoubleLinkedList<T> {
     constructor(){
         super()
     }
-    add(data: T, index: number = -1): void {
+    add(data: T, index?: number): void {
         const newNode = new DLNode(data);
-    
-        // Empty list or adding to the beginning
-        if (!this.head) {
-          this.head = newNode;
-          newNode.next = newNode;
-          newNode.prev = newNode;
-          return;
-        }
-    
-        // Handle adding to the end (default behavior)
-        if (index === -1) {
-          const lastNode = this.head.prev!; // Get the last node (we know it exists)
-          newNode.next = this.head;
-          this.head.prev = newNode;
-          lastNode.next = newNode;
-          newNode.prev = lastNode;
-          return;
+
+        if(index){
+
+            // empty list or adding to the beginning
+            if (this.head == null || index === 0) {
+                newNode.next = this.head;
+                if (this.head) {
+                this.head.prev = newNode;
+                }
+                this.head = newNode;
+                return;
+            }
+
+            // Adding to the end
+            if (index === -1) {
+                if (!this.head) {
+                this.head = newNode;
+                return;
+                }
+                let currentNode = this.head;
+                while (currentNode.next) {
+                    currentNode = currentNode.next;
+                }
+                currentNode.next = newNode;
+                newNode.prev = currentNode;
+                newNode.next = this.head
+                return;
+            }
+
+            // Adding in between the linked list
+            let currentNode = this.head;
+            let currentIndex = 0;
+            while (currentNode.next && currentIndex < index -1) {
+                currentNode = currentNode.next;
+                currentIndex++;
+            }
+            
+            if(currentNode.next){
+                newNode.next = currentNode.next;
+                currentNode.next.prev = newNode;
+                currentNode.next = newNode;
+                newNode.prev = currentNode;
+                return;
+            }
+
         }
 
-        // Handle adding in the middle (positive index)
-        let addIndex = 0;
-        let currentNode = this.head;
-        while (currentNode.next && addIndex < index - 1) {
-            currentNode = currentNode.next;
-            addIndex++;
-        }
-        if (!currentNode.next) {
+        if (!this.head) {
+            this.head = newNode;
+        } else {
+            let currentNode = this.head;
+            while (currentNode.next) {
+                currentNode = currentNode.next;
+            }
             currentNode.next = newNode;
-            newNode.prev = currentNode;
-            return;
+            newNode.prev = currentNode
+            newNode.next = this.head
         }
-        newNode.next = currentNode.next;
-        currentNode.next.prev = newNode;
-        newNode.prev = currentNode;
-        currentNode.next = newNode;
     
       }
     
-      delete(index: number) {
-        if (!this.head) {
-          return false;
-        }
-    
-        let currentNode = this.head;
-        let deleteIndex = 0;
-    
-        do {
-          if (deleteIndex === index) {
-            break;
-          }
-          currentNode = currentNode.next!; 
-          deleteIndex++;
-        } while (currentNode !== this.head);
+    delete(index: number) {
+      // If the list is empty
+      if (!this.head) {
+        return false;
+      }
 
-        if (currentNode === currentNode.next) {
-          this.head = null;
-          return true;
+      // If the list is not empty
+      let currentNode = this.head;
+      let deleteIndex = 0;
+      do {
+        if (deleteIndex === index) {
+          break;
         }
-        currentNode.prev!.next = currentNode.next;
-        currentNode.next!.prev = currentNode.prev;
-    
-        // Update head if the deleted node was the head
-        if (currentNode === this.head) {
-          this.head = currentNode.next;
-        }
+        currentNode = currentNode.next!; 
+        deleteIndex++;
+      } while (currentNode !== this.head);
+
+      // If the node to be deleted is the head
+      if (currentNode === currentNode.next) {
+        this.head = null;
         return true;
       }
-    
-      shuffle(): void {
-        console.log("Shuffling is not allowed")
+
+      // delete action
+      currentNode.prev!.next = currentNode.next;
+      currentNode.next!.prev = currentNode.prev;
+  
+      // Update head if the deleted node was the head
+      if (currentNode === this.head) {
+        this.head = currentNode.next;
       }
+      return true;
+    }
     
-      print(): void {
-        const data: Array<T> = [];
-        let currentNode = this.head;
-    
-        if (!currentNode) {
-          console.log("List is empty.");
-          return;
-        }
-        do {
-          data.push(currentNode.data);
-          currentNode = currentNode.next!;
-        } while (currentNode !== this.head);
-        console.log(data);
-      }
+    shuffle(): void {
+      console.log("Shuffling is not allowed")
+    }
+
 }
 
 const cdll = new CircularDLinkedList()
-cdll.add(1,0)
-cdll.add(2,1)
-cdll.add(3,2)
-// cdll.shuffle()
-// cdll.print()
+cdll.add(1)
+cdll.add(2)
+cdll.add(3)
+cdll.add(4)
+// cdll.delete(2)
+

@@ -15,50 +15,65 @@ export class DoubleLinkedList<T> {
         this.head = null
     }
 
-    add(data: T, index:number){
+    add(data: T, index?:number){
         const newNode = new DLNode(data);
 
-        // empty list or adding to the beginning (index 0)
-        if (this.head == null || index === 0) {
-            newNode.next = this.head;
-            if (this.head) {
-            this.head.prev = newNode;
+        if(index){
+
+            // empty list or adding to the beginning
+            if (this.head == null || index === 0) {
+                newNode.next = this.head;
+                if (this.head) {
+                this.head.prev = newNode;
+                }
+                this.head = newNode;
+                return;
             }
-            this.head = newNode;
-            return;
+
+            // Adding to the end (index -1)
+            if (index === -1) {
+                if (!this.head) {
+                this.head = newNode;
+                return;
+                }
+                let currentNode = this.head;
+                while (currentNode.next) {
+                currentNode = currentNode.next;
+                }
+                currentNode.next = newNode;
+                newNode.prev = currentNode;
+                return;
+            }
+
+            // Adding in between the linked list
+            let currentNode = this.head;
+            let currentIndex = 0;
+            while (currentNode.next && currentIndex < index -1) {
+                currentNode = currentNode.next;
+                currentIndex++;
+            }
+            
+            if(currentNode.next){
+                newNode.next = currentNode.next;
+                currentNode.next.prev = newNode;
+                currentNode.next = newNode;
+                newNode.prev = currentNode;
+                return;
+            }
+
         }
 
-        // Adding to the end (index -1)
-        if (index === -1) {
-            if (!this.head) {
+        if (!this.head) {
             this.head = newNode;
-            return;
-            }
+        } else {
             let currentNode = this.head;
             while (currentNode.next) {
-            currentNode = currentNode.next;
+                currentNode = currentNode.next;
             }
             currentNode.next = newNode;
-            newNode.prev = currentNode;
-            return;
         }
-
-        // Handle adding in the middle (positive index)
-        let addIndex = 0;
-        let currentNode = this.head;
-        while (currentNode.next && addIndex < index - 1) {
-            currentNode = currentNode.next;
-            addIndex++;
-        }
-        if (!currentNode.next) {
-            currentNode.next = newNode;
-            newNode.prev = currentNode;
-            return;
-        }
-        newNode.next = currentNode.next;
-        currentNode.next.prev = newNode;
-        newNode.prev = currentNode;
-        currentNode.next = newNode;
+        
+        
 
     }
 
@@ -94,7 +109,7 @@ export class DoubleLinkedList<T> {
         this.head = null;
 
         for (const item of shuffledList) {
-        this.add(item, -1);
+        this.add(item);
         }
     }
 
@@ -111,9 +126,3 @@ export class DoubleLinkedList<T> {
 
 }
 
-const dll = new DoubleLinkedList()
-dll.add(1,0)
-dll.add(2,1)
-dll.add(3,2)
-dll.shuffle()
-dll.print()
