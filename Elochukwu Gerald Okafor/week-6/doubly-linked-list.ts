@@ -148,4 +148,5 @@ const activityList = new DoublyLinkedList(['typescript', 'linked', 'lists']);
 
 activityList.append('implementation');
 activityList.prepend('attempt');
+
 activityList.print();
