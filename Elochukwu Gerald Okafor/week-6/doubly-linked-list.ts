@@ -1,12 +1,12 @@
 // Double node or null type
-type DNode<T> = DoubleNode<T> | null;
+export type DNode<T> = DoubleNode<T> | null;
 
 /** Doubly linked node
  * data: data this node contains
  * next: reference to the next node
  * prev: reference to the previous node
  */
-class DoubleNode<T> {
+export class DoubleNode<T> {
     public data: T;
     private next: DNode<T>;
     private prev: DNode<T>;
@@ -45,7 +45,7 @@ class DoubleNode<T> {
  * tail: pointer to the tail node
  * size: linked list size
  */
-class DoublyLinkedList<T> {
+export class DoublyLinkedList<T> {
     private head: DNode<T>; // head pointer
     private tail: DNode<T>; // tail pointer
     public size: number; // node count
@@ -261,4 +261,4 @@ activityList.insert('doubly', 3);
 activityList.remove(3); // removes 'doubly'
 activityList.remove(2); // removes 'typescript'
 
-activityList.print();
+// activityList.print();
