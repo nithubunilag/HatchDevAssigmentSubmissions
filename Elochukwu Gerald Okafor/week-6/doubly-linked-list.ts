@@ -48,7 +48,7 @@ class DoublyLinkedList<T> {
     public size: number; // node count
 
     // Initialize the doubly linked list with some data
-    constructor(values: T[]) {
+    constructor(values: T[] = []) {
         if (values.length != 0) {
             this.head = new DoubleNode(values[0]); // the head is the first element
 
@@ -111,7 +111,7 @@ class DoublyLinkedList<T> {
         if (!this.head) {
             this.head = newNode;
             this.tail = this.head;
-            
+
             this.size = 1;
             return;
         }
@@ -120,6 +120,46 @@ class DoublyLinkedList<T> {
         this.head.setPrev(newNode); // current head's prev is the new node
 
         this.head = newNode;
+        this.size += 1;
+    }
+
+    // Insert to the middle of the linked list, 1-indexed
+    public insert(val: T, pos: number) {
+        // Edge case: Out of bounds
+        if (pos < 0 || pos > this.size + 1) {
+            throw new Error('Err: Out of bounds insertion.');
+        }
+
+        // Edge case: If pos == 0, then prepend
+        if (pos == 0) {
+            this.prepend(val);
+            return;
+        }
+
+        // Edge case: If pos == size + 1, then append
+        if (pos == this.size) {
+            this.append(val);
+            return;
+        }
+
+        const newNode = new DoubleNode(val);
+        let currNode: DNode<T> = this.head;
+        let i = 1;
+
+        // Just before the position
+        while (i != pos && currNode != null) {
+            currNode = currNode.getNext();
+            i += 1;
+        }
+
+        // Update the new node pointers
+        newNode.setNext(currNode);
+        newNode.setPrev(currNode?.getPrev()!);
+
+        // Update the curr node's prev and next pointers
+        currNode!.getPrev()?.setNext(newNode);
+        currNode!.setPrev(newNode);
+
         this.size += 1;
     }
 
@@ -148,5 +188,6 @@ const activityList = new DoublyLinkedList(['typescript', 'linked', 'lists']);
 
 activityList.append('implementation');
 activityList.prepend('attempt');
+activityList.insert("doubly", 3);
 
 activityList.print();
