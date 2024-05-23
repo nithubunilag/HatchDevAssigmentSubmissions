@@ -11,7 +11,6 @@ class CircularLinkedList<T> {
     private head: Node<T> | null = null;
     private size: number = 0;
 
-
     add(value: T): void {
         const newNode = new Node(value);
         if (!this.head) {
@@ -28,8 +27,7 @@ class CircularLinkedList<T> {
         this.size++;
     }
 
-
-    remove(value: T): boolean {
+    delete(value: T): boolean {
         if (!this.head) return false;
 
         let current = this.head;
@@ -64,6 +62,28 @@ class CircularLinkedList<T> {
         return false;
     }
 
+    shuffle(): void {
+        if (this.size <= 1) return;
+
+        const nodes: Node<T>[] = [];
+        let current = this.head;
+        do {
+            nodes.push(current!);
+            current = current!.next;
+        } while (current !== this.head);
+
+        for (let i = nodes.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [nodes[i].value, nodes[j].value] = [nodes[j].value, nodes[i].value];
+        }
+
+        this.head = nodes[0];
+        for (let i = 0; i < nodes.length - 1; i++) {
+            nodes[i].next = nodes[i + 1];
+        }
+        nodes[nodes.length - 1].next = this.head;
+    }
+
     print(): void {
         if (!this.head) return;
 
@@ -74,7 +94,7 @@ class CircularLinkedList<T> {
             current = current.next;
         } while (current !== this.head);
 
-        console.log(result.join(' -> ') + ' -> ' + this.head!.value);
+        console.log(result.join(' -> ') + ' -> ' + this.head.value);
     }
 
     getSize(): number {
@@ -86,9 +106,10 @@ const list = new CircularLinkedList<number>();
 list.add(1);
 list.add(2);
 list.add(3);
-list.print();
-
-list.remove(2);
 list.print(); 
 
-console.log('Size:', list.getSize()); 
+list.delete(2);
+list.print(); 
+
+list.shuffle();
+list.print(); 
