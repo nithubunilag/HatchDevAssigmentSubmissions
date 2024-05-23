@@ -72,6 +72,90 @@ export class SinglyLinkedList<T> {
         currNode?.setNext(newNode);
     }
 
+    // Prepend to the head
+    public prepend(val: T): void {
+        const newHead = new LNode(val);
+
+        // Edge case: The list is empty
+        if (!this.head) {
+            this.head = newHead;
+            this.size += 1;
+            return;
+        }
+
+        newHead.setNext(this.head);
+        this.head = newHead;
+
+        this.size += 1;
+    }
+
+    // Insert in the middle
+    public insert(val: T, pos: number) {
+        // Edge case: Out of bounds
+        if (pos < 1 || pos > this.size + 1) {
+            throw new Error('Position out of bounds.');
+        }
+
+        // Edge case: If pos == 1, then prepend
+        if (pos == 1) {
+            this.prepend(val);
+            return;
+        }
+
+        // Edge case: If pos == size + 1, then append
+        if (pos == this.size + 1) {
+            this.append(val);
+            return;
+        }
+
+        let currNode = this.head;
+        let i = 1;
+
+        // Just before
+        while (i < pos - 1 && currNode) {
+            currNode = currNode.getNext();
+            i += 1;
+        }
+
+        if (currNode) {
+            const newNode = new LNode(val);
+
+            newNode.setNext(currNode.getNext()); // new node's next is curr's next
+            currNode.setNext(newNode); // curr node's next is the new node
+
+            this.size += 1;
+        }
+    }
+
+    // Remove from any position
+    public remove(pos: number): LNodeType<T> {
+        // Edge case: List is empty
+        if (!this.head) {
+            throw new Error('Cannot remove from an empty list');
+        }
+
+        // Edge case: Out of bounds
+        if (pos < 1 || pos > this.size) {
+            throw new Error(`Out of bounds removal from pos: '${pos}'`);
+        }
+
+        let currNode = this.head;
+        let i = 1;
+
+        while (i < pos - 1 && currNode) {
+            currNode = currNode.getNext()!;
+            i += 1;
+        }
+
+        const deletedNode = currNode.getNext();
+        currNode.setNext(deletedNode?.getNext()!); // set the curr's next to deleted's next
+
+        deletedNode?.setNext(null);
+        this.size -= 1;
+
+        return deletedNode;
+    }
+
     // Print the list content
     public print(): void {
         const nodes: T[] = [];
@@ -96,6 +180,10 @@ export class SinglyLinkedList<T> {
 
 const testList = new SinglyLinkedList(['testing', 'this', 'list']);
 
-testList.append("implementation");
+testList.append('implementation');
+testList.prepend("I'm");
+testList.insert('currently', 2);
+testList.insert('trying', 3);
+testList.remove(4); // removes 'testing'
 
 testList.print();
