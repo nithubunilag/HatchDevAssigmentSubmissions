@@ -41,6 +41,9 @@ class DoubleNode<T> {
 
 /**
  * Doubly Linked List
+ * head: pointer to the head node
+ * tail: pointer to the tail node
+ * size: linked list size
  */
 class DoublyLinkedList<T> {
     private head: DNode<T>; // head pointer
