@@ -86,11 +86,40 @@ class DoublyLinkedList<T> {
     // Append a node to the tail
     public append(val: T): void {
         const newNode = new DoubleNode(val);
-        
+
+        // Edge case: List is empty
+        if (!this.head) {
+            this.head = newNode;
+            this.tail = this.head;
+            this.size = 1;
+
+            return;
+        }
+
         newNode.setPrev(this.tail); // set prev to the current tail
         this.tail?.setNext(newNode); // set curr tail next to this new node
 
         this.tail = newNode;
+        this.size += 1;
+    }
+
+    // Prepend a node to the head
+    public prepend(val: T): void {
+        const newNode = new DoubleNode(val);
+
+        // Edge case: List is empty
+        if (!this.head) {
+            this.head = newNode;
+            this.tail = this.head;
+            
+            this.size = 1;
+            return;
+        }
+
+        newNode.setNext(this.head); // new node's next is the current head
+        this.head.setPrev(newNode); // current head's prev is the new node
+
+        this.head = newNode;
         this.size += 1;
     }
 
@@ -117,5 +146,6 @@ class DoublyLinkedList<T> {
 // Testing
 const activityList = new DoublyLinkedList(['typescript', 'linked', 'lists']);
 
-activityList.append("implementation");
+activityList.append('implementation');
+activityList.prepend('attempt');
 activityList.print();
