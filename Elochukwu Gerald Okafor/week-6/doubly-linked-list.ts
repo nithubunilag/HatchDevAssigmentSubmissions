@@ -125,6 +125,12 @@ class DoublyLinkedList<T> {
 
     // Insert to the middle of the linked list, 1-indexed
     public insert(val: T, pos: number) {
+        // Edge case: List is empty
+        if (!this.head) {
+            this.prepend(val);
+            return;
+        }
+
         // Edge case: Out of bounds
         if (pos < 0 || pos > this.size + 1) {
             throw new Error('Err: Out of bounds insertion.');
@@ -163,6 +169,65 @@ class DoublyLinkedList<T> {
         this.size += 1;
     }
 
+    // Removes from any valid position
+    public remove(pos: number): DNode<T> {
+        // Edge case: Out of bounds
+        if (pos < 0 || pos > this.size) {
+            throw new Error('Err: Out of bounds removal.');
+        }
+
+        // Edge case: List is empty
+        if (!this.head) {
+            throw new Error(
+                `Err: Cannot remove from pos '${pos} of an empty list.`
+            );
+        }
+
+        // Edge case: If pos == 0, replace the head
+        if (pos == 0) {
+            const oldHead = this.head;
+            this.head = oldHead.getNext();
+
+            oldHead.setNext(null);
+            this.size -= 1;
+            return oldHead;
+        }
+
+        // Edge case: If pos == size, replace the tail
+        if (pos == this.size) {
+            const oldTail = this.tail;
+            this.tail = oldTail?.getPrev()!;
+
+            oldTail?.setPrev(null);
+            this.size -= 1;
+            return oldTail;
+        }
+
+        let currNode: DNode<T> = this.head;
+        let i = 1;
+
+        // Just before the target
+        while (i < pos - 1 && currNode != null) {
+            currNode = currNode.getNext();
+            i += 1;
+        }
+
+        const deletedNode: DNode<T> = currNode?.getNext() ?? null;
+        if (deletedNode) {
+            deletedNode.getNext()?.setPrev(currNode); // node after deleted's prev is current
+            currNode?.setNext(deletedNode.getNext()); // node before deleted's next is deleted node's next
+
+            // Abandoned :)
+            deletedNode.setNext(null);
+            deletedNode.setPrev(null);
+
+            this.size -= 1;
+            return deletedNode;
+        }
+
+        return null;
+    }
+
     // Prints the linked list
     public print(): void {
         const nodes: T[] = [];
@@ -188,6 +253,9 @@ const activityList = new DoublyLinkedList(['typescript', 'linked', 'lists']);
 
 activityList.append('implementation');
 activityList.prepend('attempt');
-activityList.insert("doubly", 3);
+activityList.insert('doubly', 3);
+
+activityList.remove(3); // removes 'doubly'
+activityList.remove(2); // removes 'typescript'
 
 activityList.print();
