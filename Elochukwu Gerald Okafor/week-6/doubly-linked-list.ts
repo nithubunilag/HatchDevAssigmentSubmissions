@@ -43,9 +43,9 @@ class DoubleNode<T> {
  * Doubly Linked List
  */
 class DoublyLinkedList<T> {
-    private head; // head pointer
-    private tail; // tail pointer
-    private size; // node count
+    private head: DNode<T>; // head pointer
+    private tail: DNode<T>; // tail pointer
+    public size: number; // node count
 
     // Initialize the doubly linked list with some data
     constructor(values: T[]) {
@@ -62,7 +62,7 @@ class DoublyLinkedList<T> {
                 currNode?.setNext(nextNode);
 
                 // If this is the second to last element, set the tail as the next
-                if (i + 2 == values.length) {
+                if (i + 1 == values.length) {
                     this.tail = nextNode;
                 }
 
@@ -73,10 +73,31 @@ class DoublyLinkedList<T> {
         }
     }
 
+    // Get the head pointer
+    public getHead(): DNode<T> {
+        return this.head;
+    }
+
+    // Get the tail pointer
+    public getTail(): DNode<T> {
+        return this.tail;
+    }
+
+    // Append a node to the tail
+    public append(val: T): void {
+        const newNode = new DoubleNode(val);
+        
+        newNode.setPrev(this.tail); // set prev to the current tail
+        this.tail?.setNext(newNode); // set curr tail next to this new node
+
+        this.tail = newNode;
+        this.size += 1;
+    }
+
     // Prints the linked list
     public print(): void {
         const nodes: T[] = [];
-        let nodeString = '';
+        let nodeString = '|| ';
         let curr: DNode<T> = this.head;
 
         while (curr) {
@@ -95,4 +116,6 @@ class DoublyLinkedList<T> {
 
 // Testing
 const activityList = new DoublyLinkedList(['typescript', 'linked', 'lists']);
+
+activityList.append("implementation");
 activityList.print();
