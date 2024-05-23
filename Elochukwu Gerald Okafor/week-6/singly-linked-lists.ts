@@ -50,6 +50,28 @@ export class SinglyLinkedList<T> {
         }
     }
 
+    // Append to the tail
+    public append(val: T): void {
+        const newNode = new LNode(val);
+
+        // Edge case: List is empty
+        if (!this.head) {
+            this.head = newNode;
+            this.size += 1;
+            return;
+        }
+
+        let currNode: LNodeType<T> = this.head;
+
+        // While there's still a next node to consider
+        while (currNode && currNode.getNext()) {
+            currNode = currNode.getNext();
+        }
+
+        this.size += 1;
+        currNode?.setNext(newNode);
+    }
+
     // Print the list content
     public print(): void {
         const nodes: T[] = [];
@@ -73,4 +95,7 @@ export class SinglyLinkedList<T> {
 }
 
 const testList = new SinglyLinkedList(['testing', 'this', 'list']);
+
+testList.append("implementation");
+
 testList.print();
