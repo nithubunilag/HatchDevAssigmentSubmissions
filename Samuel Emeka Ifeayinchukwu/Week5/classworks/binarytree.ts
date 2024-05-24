@@ -1,3 +1,5 @@
+import { Queue } from "./Queue/queue";
+
 class TreeNode<T> {
     value: T;
     left: TreeNode<T> | null;
@@ -40,6 +42,26 @@ class BinaryTree<T> {
             }
         }
 
+    }
+    traverse() {
+        let traversedList: T[] = []
+        const queue = new Queue<TreeNode<T>>();
+        if(this.root){
+            queue.enqueue(this.root);
+            while(queue.size() > 0) {
+                const node = queue.dequeue();
+                while(node){
+                    traversedList.push(node.value);
+                    if(node.left !== null){
+                        queue.enqueue(node.left);
+                    }
+                    if(node.right !== null) {
+                        queue.enqueue(node.right);
+                    }
+                }
+            }
+        }
+        return traversedList
     }
 
 }

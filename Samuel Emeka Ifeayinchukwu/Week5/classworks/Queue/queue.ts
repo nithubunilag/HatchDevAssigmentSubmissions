@@ -1,16 +1,16 @@
 interface IQueue<T> {
-    dequeue(): T[] | undefined;
+    dequeue(): T | undefined;
     enqueue(item: T): T[];
     size(): number
 }
 
-class Queue<T> implements IQueue<T> {
+export class Queue<T> implements IQueue<T> {
     private storage: Array<T>;
     constructor(private capacity:number = Infinity) {}
 
-    dequeue(): T[]{
-        this.storage.shift()
-        return this.storage
+    dequeue(): T | undefined {
+        const removed = this.storage.shift()
+        return removed
     }
     enqueue(item: T): T[] {
         this.storage.push(item)

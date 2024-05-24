@@ -1,0 +1,4 @@
+1. Implement stack from a queue
+2. Implement queue from stack
+3. Implement stack from linkedlist
+4. Implement queue from linkedlist
