@@ -33,7 +33,7 @@ class LinkedList<T> {
   print() {
     let currentNode = this.head;
     while (currentNode !== undefined) {
-      console.log(currentNode.data);
+      console.log(`data: ${currentNode.data}, next: ${currentNode.next && currentNode.next.data}`);
       currentNode = currentNode.next;
     }
   }
