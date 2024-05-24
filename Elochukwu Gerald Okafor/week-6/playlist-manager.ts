@@ -38,39 +38,37 @@ class PlayListManager<T> {
         if (this.nextUp) {
             console.log(`- Now Playing: ${this.nextUp.data}`);
             this.plHistory.push(this.nextUp.data);
-            this.nextUp = this.nextUp.getNext() ?? null;
             return;
         }
         console.log(`- Nothing playing currently.`);
     }
 
     // Move to the next item in the play list
-    public next(): void {
-        this.nextUp = this.nextUp?.getNext() ?? null;
-        if (this.nextUp) {
+    public next(): PlayListManager<T> {
+        if (this.nextUp?.getNext()) {
+            this.nextUp = this.nextUp.getNext();
             console.log('- Next up is:', this.nextUp?.data);
-            return;
-        } else {
-            this.nextUp = null;
-            console.log("- You've reached the end of the playlist.");
+            return this;
         }
+        console.log("- You've reached the end of the playlist.");
+        return this;
     }
 
-    // Move to the previous item in the play list
-    public previous(): void {
-        if (this.nextUp) {
-            const prevNode = this.nextUp.getPrev();
-            if (prevNode) {
-                this.nextUp = prevNode;
-                console.log('- Next up is:', this.nextUp.data);
-            } else {
-                this.nextUp = this.playlist.getTail();
-            }
-        } else {
-            console.log(
-                "- You're at the end of the playlist."
-            );
+    // Move to the previous item in the playlist
+    public previous(): PlayListManager<T> {
+        if (this.nextUp?.getPrev()) {
+            this.nextUp = this.nextUp.getPrev();
+            console.log('- Next up is:', this.nextUp?.data);
+            return this;
         }
+        console.log("- You're at the start of the playlist");
+        return this;
+    }
+
+    // Add an item to the playlist
+    public add(item: T): void {
+        this.playlist.append(item);
+        console.log('- Added:', item);
     }
 
     // View playlist history
@@ -98,17 +96,14 @@ const mood = new PlayListManager([
 mood.history();
 mood.play();
 
-// mood.next();
-// mood.next();
-mood.play();
-mood.play();
-mood.play();
+mood.next().play();
 
+mood.next().play();
 mood.next();
 
-mood.previous();
-// mood.play();
-// mood.previous();
-// mood.play();
+mood.previous().previous();
+
+mood.add(new Song("Four Seasons", "Vivaldi", 1723));
+mood.next().next().next().play();
 
 mood.history();
