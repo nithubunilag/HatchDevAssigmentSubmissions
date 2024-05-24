@@ -4,7 +4,7 @@ interface Queue<T>{
 }
 
 
-class stackQueue<T> implements queue<T>{
+class stackQueue<T> implements Queue<T>{
     private queue: T[] = []
 
     constructor(private capacity: number = Infinity){
