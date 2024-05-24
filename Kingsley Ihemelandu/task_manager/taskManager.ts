@@ -1,4 +1,5 @@
 import { LinkedList } from "./linkedList";
+import { Stack } from "./stack";
 import { ITask } from "./types";
 
 class TaskManager extends LinkedList<ITask> {

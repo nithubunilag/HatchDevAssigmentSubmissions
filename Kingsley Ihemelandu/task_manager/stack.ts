@@ -1,4 +1,4 @@
-class Stack<T> {
+export class Stack<T> {
   data: T[] = [];
 
   protected push(val: T) {
