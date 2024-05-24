@@ -50,9 +50,9 @@ class CLL<T> {
 
 const item = new CLL<number>();
 item.add(1);
-// item.add(2);
-// item.add(3);
-// item.add(4);
-// item.add(5);
+item.add(2);
+item.add(3);
+item.add(4);
+item.add(5);
 
 item.print();
