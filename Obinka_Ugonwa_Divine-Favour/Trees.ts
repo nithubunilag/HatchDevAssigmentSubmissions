@@ -24,8 +24,10 @@ class Binarytree<T>{
         let travArr: T[] = []
         let queue: TNode<T>[] = [this.root]
 
-        let currNode: TNode<T> = queue[0]
+        let currNode;
         while(queue.length > 0){
+            
+            currNode = queue.shift();
 
             if(currNode.Lchild !== null ){
                 queue.push(currNode.Lchild)
