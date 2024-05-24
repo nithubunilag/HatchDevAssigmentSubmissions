@@ -49,8 +49,8 @@ async function getsongData(entity:string,limit:number=10) {
   }
 }
 function loadPlaylist(playlist:Playlist<SongData>, arr:SongData[]){
-  for(let i=0 ; i< arr.length;){
-    playlist.queue(arr.shift()!)
+  for(let i=0 ; i< arr.length;i++){
+    playlist.queue(arr[i])
   }
 }
 
@@ -102,12 +102,13 @@ class Playlist<SongData>{
   }
 }
 
-getsongData("lojay",8).then(() => {
-  // console.log(songlist);
+getsongData("lojay",10).then(() => {
+  console.log(songlist);
   const sounds = new Playlist<SongData>()
   // sounds.repeat = "all"
   loadPlaylist(sounds,songlist)
   console.log(sounds)
+  console.log(songlist.length)
 });
 
 // sounds.queue(songlist.shift()!)
