@@ -1,0 +1,34 @@
+class BinaryTree {
+    size: number;
+    tree: (number | null)[];
+
+    constructor(size: number) {
+        this.size = size;
+        this.tree = new Array(size).fill(null);
+    }
+
+    insert(index: number, value: number): void {
+        if (index < this.size) {
+            this.tree[index] = value;
+        } else {
+            console.log("Index out of bounds");
+        }
+    }
+
+    getNodeValue(index: number): number | null {
+        if (index < this.size) {
+            return this.tree[index];
+        } else {
+            console.log("Index out of bounds");
+            return null;
+        }
+    }
+}
+
+// Example Usage
+const binaryTree = new BinaryTree(10);
+binaryTree.insert(0, 5);
+binaryTree.insert(1, 3);
+binaryTree.insert(2, 8);
+
+console.log(binaryTree.getNodeValue(1));  // Output: 3
