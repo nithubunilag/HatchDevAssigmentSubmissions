@@ -20,6 +20,7 @@ Tracking my NitHub Hatch Dev weekly project source code.
 ## Week 6
 1. Binary Tree
 2. Doubly Linked List
-3. Circular Linked List
-4. Singly Linked List (Class for Task Manager)
+3. Circular Linked List (Singly)
+4. Singly Linked List
 5. Task Manager
+6. Play List Manager
