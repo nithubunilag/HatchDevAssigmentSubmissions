@@ -17,11 +17,32 @@ export class Queue<T> {
         this.size += 1;
     }
 
+    // Enqueue many
+    public enqueueMany(items: T[]): void {
+        for (const item of items) {
+            this.data.push(item);
+            this.size += 1;
+        }
+    }
+
     // Dequeue
     public dequeue(): T | null {
         if (this.size > 0) {
             this.size -= 1;
             return this.data.shift() ?? null;
+        }
+        return null;
+    }
+
+    // Dequeue Many
+    public dequeueMany(): T[] | null {
+        if (this.size > 0) {
+            const dequeued: T[] = [];
+            while (this.size > 0) {
+                this.size -= 1;
+                dequeued.push(this.data.shift()!);
+            }
+            return dequeued;
         }
         return null;
     }
@@ -32,6 +53,11 @@ export class Queue<T> {
             return this.data[0];
         }
         return null;
+    }
+
+    // Returns true if empty, false otherwise
+    public isEmpty(): boolean {
+        return this.size == 0;
     }
 
     // Print
