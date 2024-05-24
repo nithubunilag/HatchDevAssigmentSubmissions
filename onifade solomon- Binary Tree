@@ -1,0 +1,63 @@
+class TreeNode<T> {
+    data: T;
+    left: TreeNode<T> | null;
+    right: TreeNode<T> | null;
+
+    constructor(data: T) {
+        this.data = data;
+        this.left = null;
+        this.right = null;
+    }
+}
+
+class BinaryTree<T> {
+    root: TreeNode<T> | null;
+
+    constructor() {
+        this.root = null;
+    }
+
+    insert(data: T): void {
+        const newNode = new TreeNode(data);
+        if (!this.root) {
+            this.root = newNode;
+        } else {
+            const queue: TreeNode<T>[] = [];
+            queue.push(this.root);
+            while (queue.length > 0) {
+                const node = queue.shift()!;
+                if (!node.left) {
+                    node.left = newNode;
+                    break;
+                } else {
+                    queue.push(node.left);
+                }
+                if (!node.right) {
+                    node.right = newNode;
+                    break;
+                } else {
+                    queue.push(node.right);
+                }
+            }
+        }
+    }
+
+    inorderTraversal(node: TreeNode<T> | null): void {
+        if (node) {
+            this.inorderTraversal(node.left);
+            console.log(node.data);
+            this.inorderTraversal(node.right);
+        }
+    }
+}
+
+// Example usage:
+const tree = new BinaryTree<number>();
+tree.insert(1);
+tree.insert(2);
+tree.insert(3);
+tree.insert(4);
+tree.insert(5);
+
+console.log("Inorder traversal:");
+tree.inorderTraversal(tree.root);
