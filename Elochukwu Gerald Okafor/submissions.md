@@ -20,7 +20,11 @@ Tracking my NitHub Hatch Dev weekly project source code.
 ## Week 6
 1. Binary Tree
 2. Doubly Linked List
-3. Circular Linked List (Singly)
+3. Circular Linked List (singly)
 4. Singly Linked List
-5. Task Manager
-6. Play List Manager
+5. Stack from Queue
+6. Queue from Stack
+7. Task Manager
+8. Play List Manager
+9. HackerRank (remove duplicates)
+10. HackerRAnk (reverse linked list)
