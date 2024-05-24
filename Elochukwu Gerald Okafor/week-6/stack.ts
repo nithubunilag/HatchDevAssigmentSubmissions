@@ -1,23 +1,15 @@
 export class Stack<T> {
     private data: T[];
     private size: number = 0;
-    private capacity: number;
 
     // Initialize the stack with some data
-    constructor(initial: T[] = [], capacity: number) {
-        if (initial.length > capacity) {
-            throw new Error('Initial data exceeds stack capacity.');
-        }
+    constructor(initial: T[] = []) {
         this.data = initial.reverse();
-        this.capacity = capacity;
         this.size = this.data.length;
     }
 
     // Push an item
     public push(item: T): void {
-        if (this.size + 1 > this.capacity) {
-            throw new Error('Pushing new item exceeds stack capacity.');
-        }
         this.data.unshift(item);
         this.size += 1;
     }
@@ -43,13 +35,3 @@ export class Stack<T> {
         }
     }
 }
-
-const callStack = new Stack(
-    ['end', 'print variable height', 'create variable height = 1'],
-    4
-);
-
-callStack.push('start');
-// callStack.push('fail');
-console.log('Is empty:', callStack.isEmpty());
-callStack.iterate();

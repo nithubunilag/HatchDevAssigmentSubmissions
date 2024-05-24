@@ -23,8 +23,7 @@ Tracking my NitHub Hatch Dev weekly project source code.
 3. Circular Linked List (singly)
 4. Singly Linked List
 5. Stack from Queue
-6. Queue from Stack
-7. Task Manager
-8. Play List Manager
-9. HackerRank (remove duplicates)
-10. HackerRAnk (reverse linked list)
+6. Task Manager
+7. Play List Manager
+8. HackerRank (remove duplicates)
+9. HackerRank (reverse linked list)
