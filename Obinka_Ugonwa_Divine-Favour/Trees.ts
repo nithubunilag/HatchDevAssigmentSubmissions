@@ -20,11 +20,11 @@ class Binarytree<T>{
 
    
     traverse(){
-        let currNode = this.root
-
+        
         let travArr: T[] = []
         let queue: TNode<T>[] = [this.root]
 
+        let currNode: TNode<T> = queue[0]
         while(queue.length > 0){
 
             if(currNode.Lchild !== null ){
@@ -35,7 +35,7 @@ class Binarytree<T>{
             }
             let element = queue.shift()
             travArr.push(element?.data!)
-            currNode = currNode
+        
         }
     }
 
