@@ -66,6 +66,7 @@ type repeatType = "off"| "all"|"one"
 class Playlist<SongData>{
   head:songNode<SongData>;
   repeat: repeatType = "off"
+
   queue(val:SongData){
     let newNode = new songNode(val)
     if(!this.head){
@@ -80,6 +81,9 @@ class Playlist<SongData>{
       
       while(currentNode.next !== null){
         currentNode = currentNode.next
+        if(currentNode.next = this.head){
+          break
+        }
       }
       currentNode.next = newNode
       return
@@ -98,9 +102,10 @@ class Playlist<SongData>{
   }
 }
 
-getsongData("micheal+jackson",2).then(() => {
-  console.log(songlist);
+getsongData("lojay",8).then(() => {
+  // console.log(songlist);
   const sounds = new Playlist<SongData>()
+  // sounds.repeat = "all"
   loadPlaylist(sounds,songlist)
   console.log(sounds)
 });
