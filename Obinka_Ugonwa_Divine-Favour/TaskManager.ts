@@ -2,10 +2,14 @@
 
 class Tasks<T>{
     data: T 
+    status: boolean
+    memory: number
     next: Tasks<T> 
 
     constructor(task: T){
         this.data = task
+        this.status = true
+        this.memory = 16
     }
 }
 
@@ -15,7 +19,7 @@ class TaskManager<T>{
 
     addTask(task: T){
         const newTask = new Tasks(task)
-        
+
         if(!this.head){
             this.head = newTask
             return
@@ -29,6 +33,11 @@ class TaskManager<T>{
 
     }
     
+    endTask(task: Tasks<T>){
+        task.status = false
+        task.memory = 0
+        console.log(`Task ${task.data} has been terminated and momery has been cleared`)
+    }
 
     deleteTask(task: T){
 
@@ -46,7 +55,6 @@ class TaskManager<T>{
 
         // deleting a random task; while there's a task and it's data isn't equal to what we're deleting, traverse.
         let currTask = this.head
-        let prevTask;
         while(currTask.next && currTask.next.data !== task){
             currTask = currTask?.next!
         }
