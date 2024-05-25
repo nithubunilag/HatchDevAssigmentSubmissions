@@ -11,7 +11,7 @@ class TreeNode {
   }
   
   class TransverseTree {
-    queue: TreeNode[] = []; // Change queue type to TreeNode[]
+    queue: TreeNode[] = [];
     list: string[] = [];
   
     constructor() {
