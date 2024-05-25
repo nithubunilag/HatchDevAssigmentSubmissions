@@ -1,5 +1,5 @@
 /** Tree Node Class */
-class TreeNode<T> {
+export class TreeNode<T> {
     public data: T;
     public left?: TreeNode<T>;
     public right?: TreeNode<T>;
@@ -11,7 +11,7 @@ class TreeNode<T> {
 }
 
 /** Tree Class */
-class Tree<T> {
+export class Tree<T> {
     public root?: TreeNode<T>;
 
     constructor(root: T) {
@@ -39,10 +39,10 @@ class Tree<T> {
     }
 }
 
-const binaryTree = new Tree("root");
+// const binaryTree = new Tree("root");
 
-binaryTree.root!.left = new TreeNode("first left");
-binaryTree.root!.right = new TreeNode("first right");
+// binaryTree.root!.left = new TreeNode("first left");
+// binaryTree.root!.right = new TreeNode("first right");
 
-const nodes = binaryTree.traverse();
-console.log(nodes);
+// const nodes = binaryTree.traverse();
+// console.log(nodes);
