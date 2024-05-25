@@ -27,3 +27,6 @@ Tracking my NitHub Hatch Dev weekly project source code.
 7. Play List Manager
 8. HackerRank (remove duplicates)
 9. HackerRank (reverse linked list)
+
+## Week 7
+1. Binary Tree Traversal
