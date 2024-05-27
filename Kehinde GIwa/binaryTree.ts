@@ -1,5 +1,5 @@
 // binary tree is a tree that has a very bug node called root AND VERY SMALL NODES
-
+// Kehinde Giwa 
 class TNode<T> {
   data: T;
   left: TNode<T> | null;
