@@ -1,3 +1,5 @@
+//SALAMI YUSUF OLADEJI, yusufsalami266@gmail.com
+
 class TreeNode {
     data: any;
     left: TreeNode | null;
