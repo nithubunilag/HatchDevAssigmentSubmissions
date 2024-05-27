@@ -1,3 +1,6 @@
+// Name: Fagoroye Peter
+// Email: peterfagoroye76@gmail.com
+
 class Nodel<T>{
     val: T;
     right: Nodel<T> | null = null;
