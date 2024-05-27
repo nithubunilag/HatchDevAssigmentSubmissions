@@ -1,3 +1,8 @@
+/**
+ * FULLNAME: ELOCHUKWU GERALD OKAFOR
+ * EMAIL: eogerald.07@gmail.com
+ * GITHUB USERNAME: dev-xero
+ */
 /** NOTE: I had to change a few things to suit my implementation better */
 
 // An 'updatable' interface means that the component is updatable

@@ -1,3 +1,9 @@
+/**
+ * FULLNAME: ELOCHUKWU GERALD OKAFOR
+ * EMAIL: eogerald.07@gmail.com
+ * GITHUB USERNAME: dev-xero
+ */
+
 /** Tree Node Class */
 export class TreeNode<T> {
     public data: T;

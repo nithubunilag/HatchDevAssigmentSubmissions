@@ -1,3 +1,8 @@
+/**
+ * FULLNAME: ELOCHUKWU GERALD OKAFOR
+ * EMAIL: eogerald.07@gmail.com
+ * GITHUB USERNAME: dev-xero
+ */
 import { Queue } from './queue.ts';
 
 /** Implements a stack from a queue */

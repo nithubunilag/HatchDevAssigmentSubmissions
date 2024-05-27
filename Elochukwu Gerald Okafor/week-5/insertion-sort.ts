@@ -1,3 +1,8 @@
+/**
+ * FULLNAME: ELOCHUKWU GERALD OKAFOR
+ * EMAIL: eogerald.07@gmail.com
+ * GITHUB USERNAME: dev-xero
+ */
 function insertionSort<T>(space: T[]) {
     for (let i = 1; i < space.length; i++) {
         let key = space[i];

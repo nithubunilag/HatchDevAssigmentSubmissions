@@ -1,3 +1,8 @@
+/**
+ * FULLNAME: ELOCHUKWU GERALD OKAFOR
+ * EMAIL: eogerald.07@gmail.com
+ * GITHUB USERNAME: dev-xero
+ */
 // Flips and inverts an image matrix
 function flipAndInvertImage(image: number[][]): number[][] {
     let invertedImage: number[][] = image;

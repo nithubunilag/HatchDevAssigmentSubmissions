@@ -1,3 +1,8 @@
+/**
+ * FULLNAME: ELOCHUKWU GERALD OKAFOR
+ * EMAIL: eogerald.07@gmail.com
+ * GITHUB USERNAME: dev-xero
+ */
 import swap from './swap';
 
 // Sorts an array in place using the Bubble Sort algorithm

@@ -1,3 +1,8 @@
+/**
+ * FULLNAME: ELOCHUKWU GERALD OKAFOR
+ * EMAIL: eogerald.07@gmail.com
+ * GITHUB USERNAME: dev-xero
+ */
 // Hardware component types
 type keyboardType = 'in-built' | 'external';
 type keyboardLayout = 'qwerty' | 'dvorak' | 'colemark';
