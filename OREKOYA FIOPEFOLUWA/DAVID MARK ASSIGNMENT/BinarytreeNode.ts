@@ -29,7 +29,7 @@ function binaryTreeOrder<T>(head: binaryTree<T> | null) {
             queue.push(node.rightPointer)
         // const size = queue.length
         
-        // for(let i = 0; i < size; i++){
+        // for(let i = 0; i < size; i++){i
         //     const npointer = queue.shift()!
         //     console.log(npointer.val)
 
