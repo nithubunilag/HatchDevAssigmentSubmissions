@@ -69,28 +69,77 @@ class BinaryTree<T> {
       queue.splice(0, 1);
     }
     return transOutput;
+
+    //   while (queue.length > 0) {
+    //     let currentNode = queue.shift()!;  // Dequeue the front node
+
+    //     transOutput.push(currentNode.data);  // Process the current node
+
+    //     if (currentNode.leftNode !== null) {  // Enqueue left child
+    //       queue.push(currentNode.leftNode);
+    //     }
+    //     if (currentNode.rightNode !== null) {  // Enqueue right child
+    //       queue.push(currentNode.rightNode);
+    //     }
+    //   }
+
+    //   return transOutput;
   }
 
-  //   while (queue.length > 0) {
-  //     let currentNode = queue.shift()!;  // Dequeue the front node
 
-  //     transOutput.push(currentNode.data);  // Process the current node
+  preOrder(node: TreeNode<T> | null): T[] {
+    if (!node) return [];
 
-  //     if (currentNode.leftNode !== null) {  // Enqueue left child
-  //       queue.push(currentNode.leftNode);
-  //     }
-  //     if (currentNode.rightNode !== null) {  // Enqueue right child
-  //       queue.push(currentNode.rightNode);
-  //     }
-  //   }
+    const output: T[] = [];
+    output.push(node?.data!);
+    output.push(...this.preOrder(node!.leftNode));
+    output.push(...this.preOrder(node!.rightNode));
 
-  //   return transOutput;
+    return output;
+  }
+
+  // let outOrder = [];
+  inOrderDfs(node: TreeNode<T> | null): T[] {
+    if (!node) return [];
+
+    const output: T[] = [];
+    
+    output.push(...this.inOrderDfs(node!.leftNode));
+    output.push(node?.data!);
+    output.push(...this.inOrderDfs(node!.rightNode));
+
+    return output;
+  }
+
+  postOrder(node: TreeNode<T> | null): T[] {
+    if (!node) return [];
+
+    const output: T[] = [];
+    
+    output.push(...this.postOrder(node!.leftNode));
+    output.push(...this.postOrder(node!.rightNode));
+    output.push(node?.data!);
+    
+
+    return output;
+  }
 }
 
 const newTree = new BinaryTree<number>();
 newTree.root = new TreeNode(1);
-newTree.root.leftNode = new TreeNode(4);
+newTree.root.leftNode = new TreeNode(5);
 newTree.root.rightNode = new TreeNode(3);
 newTree.root.leftNode.leftNode = new TreeNode(4);
+newTree.root.leftNode.rightNode = new TreeNode(2);
 
-console.log(newTree.tranverse());
+console.log("Level-order traversal:", newTree.tranverse());
+console.log("Recursive pre-order traversal:", newTree.preOrder(newTree.root));
+console.log("Recursive in-order traversal:", newTree.inOrderDfs(newTree.root));
+console.log("Recursive post-order traversal:", newTree.postOrder(newTree.root));
+
+//The tree structure:
+//       1
+//     /   \
+//    5      3
+//   /  \
+//  4    2
