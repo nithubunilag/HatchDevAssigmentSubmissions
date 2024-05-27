@@ -1,3 +1,6 @@
+//name: Ajayi Odunayo Mayowa
+//email: odunayoajayi2004@gmail.com
+//github_username: odunayo222
 class TreeNode<T>{
     value: T;
     left: TreeNode<T> | null;
