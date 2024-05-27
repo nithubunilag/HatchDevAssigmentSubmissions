@@ -52,3 +52,6 @@
 - HackerRank Challenges
     - Reverse a linked list in place
     - Remove duplicates from a linked list
+
+### Week 7:
+- Implement breadth-first tree traversal
