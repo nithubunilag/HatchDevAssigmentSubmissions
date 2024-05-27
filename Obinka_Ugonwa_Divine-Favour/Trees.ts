@@ -1,6 +1,3 @@
-// Name: Obinka Ugonwa Divine-Favour
-// email: divneobk@gmail.com
-
 class TNode<T>{
     Lchild: TNode<T> | null
     data: T
@@ -76,30 +73,30 @@ class BinaryTree<T>{
         return travArr
     }
     
-    travArr: T[] = [];
+    
 
-    dfspretraverse(){
+    // my implementation of pre order traversal
+    mypretraverse(element: TNode<T> | null): T[]{
         
-        if(!this.root){
-            return;
+        if(!element){
+            return [];
         }
 
-        let currNode = this.root
+        let travArr: T[] = [];
         
-        while(currNode){
+        while(element){
 
-            this.travArr.push(currNode.data)
+            travArr.push(element.data)
 
-            if(currNode.Lchild ){
-                this.travArr.push(currNode.Lchild?.data!)
-                this.dfspretraverse()
+            if(element.Lchild ){
+                travArr.push(...this.mypretraverse(element.Lchild!))
             } 
-            if(currNode.Rchild){
-                this.travArr.push(currNode.Rchild?.data!)
+            if(element.Rchild){
+                travArr.push(...this.mypretraverse(element.Rchild!)) 
             }
             
         }  
-        return;
+        return travArr;
     }
 
     
@@ -115,6 +112,30 @@ class BinaryTree<T>{
         return output
     }
 
+    // my in order traversal
+    myintraverse(element: TNode<T> | null): T[]{
+        
+        if(!element){
+            return [];
+        }
+
+        let travArr: T[] = [];
+        
+        while(element){
+
+            if(element.Lchild ){
+                travArr.push(...this.myintraverse(element.Lchild!))
+            } 
+            travArr.push(element.data)
+            if(element.Rchild){
+                travArr.push(...this.myintraverse(element.Rchild!)) 
+            }
+            
+        }  
+        return travArr;
+    }
+
+
     inorder(node: TNode<T> | null): T[]{
         if(!node) return []
 
@@ -125,6 +146,29 @@ class BinaryTree<T>{
         output.push(...this.inorder(node!.Rchild))
 
         return output
+    }
+
+    // my post order traversal
+    myposttraverse(element: TNode<T> | null): T[]{
+        
+        if(!element){
+            return [];
+        }
+
+        let travArr: T[] = [];
+        
+        while(element){
+
+            if(element.Lchild ){
+                travArr.push(...this.myposttraverse(element.Lchild!))
+            } 
+            travArr.push(element.data)
+            if(element.Rchild){
+                travArr.push(...this.myposttraverse(element.Rchild!)) 
+            }
+            
+        }  
+        return travArr;
     }
 
     postorder(node: TNode<T> | null): T[]{
@@ -155,34 +199,10 @@ console.log(mytree)
 let element = mytree.bfstraverse()
 console.log(element)
 let root = mytree.root
-let trav = mytree.postorder(root) // 
+let trav = mytree.postorder(root) 
 console.log(trav)
- 
-
-// testing operator precedence
-// let x = 1
-// console.log(x)
-// let y = x++
-// console.log(y)
-// let z = --y
-// console.log(z)
-// console.log(x)
-
-
-// class ArrBinaryTree<T>{
-//     arr: T[] = []
-//     root: T | null
-
-//     constructor(){
-//         this.root = null
-//     }
-
-//     addNode(value: T){
-//         if(!this.root){
-//             this.root = value
-//         }
-//     }
-// }
+let mytrav = mytree.mypretraverse(root) 
+console.log(mytrav)
 
 
 
