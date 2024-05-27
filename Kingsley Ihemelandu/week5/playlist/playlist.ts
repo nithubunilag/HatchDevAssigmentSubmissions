@@ -126,7 +126,7 @@ export class DoubleLinkedList<T> {
 
 }
 
-interface ISong {
+interface ISong { 
     title: string;
     artist: string;
     // Add other song metadata as needed (e.g., album, duration)
