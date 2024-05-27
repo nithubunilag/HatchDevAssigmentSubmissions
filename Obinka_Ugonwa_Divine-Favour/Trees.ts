@@ -45,7 +45,7 @@ class BinaryTree<T>{
     }
 
 
-    traverse(){
+    bfstraverse(){
         
         if(!this.root){
             return
@@ -70,8 +70,71 @@ class BinaryTree<T>{
         let element = queue.shift()
         travArr.push(element?.data!)
         
+        return travArr
     }
     
+    travArr: T[] = [];
+
+    dfspretraverse(){
+        
+        if(!this.root){
+            return;
+        }
+
+        let currNode = this.root
+        
+        while(currNode){
+
+            this.travArr.push(currNode.data)
+
+            if(currNode.Lchild ){
+                this.travArr.push(currNode.Lchild?.data!)
+                this.dfspretraverse()
+            } 
+            if(currNode.Rchild){
+                this.travArr.push(currNode.Rchild?.data!)
+            }
+            
+        }  
+        return;
+    }
+
+    
+    preorder(node: TNode<T> | null): T[]{
+
+        if(!node) return []
+
+        let output: T[] = []
+        output.push(node?.data!)
+        output.push(...this.preorder(node!.Lchild))
+        output.push(...this.preorder(node!.Rchild))
+
+        return output
+    }
+
+    inorder(node: TNode<T> | null): T[]{
+        if(!node) return []
+
+        let output: T[] = []
+        
+        output.push(...this.inorder(node!.Lchild))
+        output.push(node?.data!)
+        output.push(...this.inorder(node!.Rchild))
+
+        return output
+    }
+
+    postorder(node: TNode<T> | null): T[]{
+        if(!node) return []
+
+        let output: T[] = []
+        
+        output.push(...this.postorder(node!.Lchild))
+        output.push(...this.postorder(node!.Rchild))
+        output.push(node?.data!)
+
+        return output
+    }
 }
 
 
@@ -86,18 +149,21 @@ mytree.insert(65)
 mytree.insert(9)
 mytree.insert(11)
 console.log(mytree)
-let element = mytree.traverse()
-console.log(element)    // needs work
-
+let element = mytree.bfstraverse()
+console.log(element)
+let root = mytree.root
+let trav = mytree.postorder(root) // 
+console.log(trav)
+ 
 
 // testing operator precedence
-let x = 1
-console.log(x)
-let y = x++
-console.log(y)
-let z = --y
-console.log(z)
-console.log(x)
+// let x = 1
+// console.log(x)
+// let y = x++
+// console.log(y)
+// let z = --y
+// console.log(z)
+// console.log(x)
 
 
 // class ArrBinaryTree<T>{
@@ -114,3 +180,6 @@ console.log(x)
 //         }
 //     }
 // }
+
+
+
