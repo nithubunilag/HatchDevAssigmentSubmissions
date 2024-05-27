@@ -1,3 +1,7 @@
+// David Emmanuel
+// david3emmanuel@gmail.com
+
+
 class TreeNode<T> {
     data: T;
     left?: TreeNode<T>;
