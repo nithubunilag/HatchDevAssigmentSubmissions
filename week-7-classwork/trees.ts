@@ -1,3 +1,4 @@
+// Implementing a tree using linked list
 class TreeNode {
     data: string;
     left: TreeNode | null;
