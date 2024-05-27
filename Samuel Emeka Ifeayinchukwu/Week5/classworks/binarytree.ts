@@ -1,3 +1,8 @@
+//Name: Emeka Samuel Ifeayinchukwu
+//Github username: samthemogul
+// Email address: samuelemeka.guru@gmail.com
+
+
 import { Queue } from "./Queue/queue";
 
 class TreeNode<T> {
@@ -43,7 +48,7 @@ class BinaryTree<T> {
         }
 
     }
-    traverse() {
+    bfirstTraverse() {
         let traversedList: T[] = []
         const queue = new Queue<TreeNode<T>>();
         if(this.root){
@@ -61,6 +66,44 @@ class BinaryTree<T> {
                 }
             }
         }
+        return traversedList
+    }
+
+    preOrderTraversal(root: TreeNode<T> | null): T[] | undefined {
+        const traversedList: T[] = []
+        if (root === null) return;
+        traversedList.push(root.value);
+
+        // Traverse left subtree
+        this.preOrderTraversal(root.left);
+
+        // Traverse right subtree
+        this.preOrderTraversal(root.right);
+
+        return traversedList
+    }
+
+    inOrderTraversal(root: TreeNode<T> | null): T[] {
+        const traversedList: T[] = []
+        if (root === null) return traversedList;
+
+        // Traverse left subtree, then root, then right subtree
+        traversedList.push(...this.inOrderTraversal(root.left));
+        traversedList.push(root.value);
+        traversedList.push(...this.inOrderTraversal(root.right));
+
+        return traversedList
+    }
+
+    postOrderTraversal(root: TreeNode<T> | null): T[] {
+        const traversedList: T[] = []
+        if (root === null) return traversedList;
+
+        // Traverse left subtree, then right subtree, then root
+        traversedList.push(...this.postOrderTraversal(root.left));
+        traversedList.push(...this.postOrderTraversal(root.right));
+        traversedList.push(root.value);
+
         return traversedList
     }
 

@@ -80,7 +80,15 @@ export class DoubleLinkedList<T> {
     delete(index: number){
         if(this.head == null) {
             return false
-        } else {
+        } else if(index == -1){
+            //Delete the last item
+            let currentNode = this.head;
+            while(currentNode.next){
+                currentNode = currentNode.next
+            }
+            currentNode.prev!.next = null
+            return currentNode
+        }else {
             let deleteIndex = 0;
             let currentNode = this.head
             while(deleteIndex < index && currentNode.next){
@@ -90,9 +98,30 @@ export class DoubleLinkedList<T> {
             if(currentNode.prev !== null){
                 currentNode.prev.next = currentNode.next
             }
-
+            return currentNode
         }
-        return true
+        
+    }
+
+    get(index: number){
+        if(this.head == null){
+            return false
+        } else if (index === -1) {
+            let currentNode = this.head;
+            while(currentNode.next){
+                currentNode = currentNode.next
+            }
+            return currentNode
+        } else {
+            let currentIndex = 0;
+            let currentNode = this.head;
+            while(currentNode.next && currentIndex < index){
+                currentNode = currentNode.next
+                currentIndex++
+        }
+            return currentNode
+        }
+        
     }
 
     shuffle(){

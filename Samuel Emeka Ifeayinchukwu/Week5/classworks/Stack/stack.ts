@@ -1,6 +1,6 @@
 interface IStack<T> {
     push(element: T): void;
-    pop(): T[] | undefined;
+    pop(): T | undefined;
     peek(): T | undefined ;
     size(): number;
 }
@@ -14,8 +14,8 @@ export default class Stack<T> implements IStack<T> {
         }
     }
     public pop(){
-        this.storage.pop()
-        return this.storage
+        const popped = this.storage.pop()
+        return popped
     }
     public peek(){
         return this.storage[this.size() - 1]
