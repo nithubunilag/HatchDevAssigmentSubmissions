@@ -1,3 +1,5 @@
+//Alfred Emmanuel
+
 class Node<T> {
     data: T;
     leftChild: Node<T> | null;
