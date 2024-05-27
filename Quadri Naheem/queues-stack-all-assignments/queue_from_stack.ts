@@ -1,3 +1,7 @@
+/**
+ * Full Name: Quadri Naheem
+ * Email: naheemquadri3410@gmail.com
+ */
 class QueueFromStack<T> {
     private stack1: T[];
     private stack2: T[];

@@ -1,3 +1,7 @@
+/**
+ * Full Name: Quadri Naheem
+ * Email: naheemquadri3410@gmail.com
+ */
 class ListNode<T> {
     value: T;
     next: ListNode<T> | null;

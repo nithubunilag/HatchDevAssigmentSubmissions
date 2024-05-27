@@ -1,3 +1,7 @@
+/**
+ * Full Name: Quadri Naheem
+ * Email: naheemquadri3410@gmail.com
+ */
 // Define the Song interface
 interface Song {
     id: number;
