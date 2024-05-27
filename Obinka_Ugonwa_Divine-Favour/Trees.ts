@@ -1,3 +1,6 @@
+// Name: Obinka Ugonwa Divine-Favour
+// email: divneobk@gmail.com
+
 class TNode<T>{
     Lchild: TNode<T> | null
     data: T

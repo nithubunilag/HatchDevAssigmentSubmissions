@@ -1,3 +1,6 @@
+// Name: Obinka Ugonwa Divine-Favour
+// email: divneobk@gmail.com
+
 // creating task nodes class
 
 class Tasks<T>{

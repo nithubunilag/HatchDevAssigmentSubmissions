@@ -1,3 +1,6 @@
+// Name: Obinka Ugonwa Divine-Favour
+// email: divneobk@gmail.com
+
 class ShoppingCart<T extends Hooks | Yarns | Tools>{
     products: T[] = [];
     orderList: {item: T, quantity:number}[] = []

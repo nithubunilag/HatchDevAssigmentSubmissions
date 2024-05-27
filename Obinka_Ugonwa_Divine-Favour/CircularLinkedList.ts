@@ -1,3 +1,6 @@
+// Name: Obinka Ugonwa Divine-Favour
+// email: divneobk@gmail.com
+
 class CLNode<T>{
     data: T 
     next: CLNode<T>

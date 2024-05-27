@@ -1,3 +1,6 @@
+// Name: Obinka Ugonwa Divine-Favour
+// email: divneobk@gmail.com
+
 class Laptop{
     keyboard: Keyboard[] = []
     os: OS
