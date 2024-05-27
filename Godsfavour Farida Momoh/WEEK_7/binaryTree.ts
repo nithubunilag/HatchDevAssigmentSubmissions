@@ -1,3 +1,5 @@
+//  Godsfavour Farida Momoh
+// farimomoh@gmail.com
 interface IQueue<T> {
   dequeue(): T | undefined;
   enqueue(item: T): T[];
