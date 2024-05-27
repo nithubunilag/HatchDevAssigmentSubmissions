@@ -1,3 +1,6 @@
+// Name: Kingsley Ihemelandu
+// Email: kingiheme2005@gmail.com
+// Github Username: kijuchihe
 export class Node<T> {
   public data: T;
   public left: Node<T> | null = null;
@@ -77,37 +80,4 @@ export class BinaryTree<T> {
   }
 
   // Get the children of a node
-  public getChildren(node: Node<T> | null): Array<Node<T>>|null {
-    if (node === null) return null;
-    if (node.left instanceof Node && node.right instanceof Node) return [node.left, node.right];
-    return null
-  }
-
-  // Get the parent of a node (assuming parent-child links are maintained)
-  public getParent(node: Node<T> | null): Node<T> | null {
-    if (this.root === null || node === null || node === this.root) {
-      return null;
-    }
-
-    let currentNode: Node<T> | null = this.root;
-    const queue: Node<T>[] = [];
-    queue.push(currentNode);
-
-    while (queue.length > 0) {
-      currentNode = queue.shift()!; // Non-null assertion as we check for empty queue
-
-      if (currentNode.left === node || currentNode.right === node) {
-        return currentNode;
-      }
-
-      if (currentNode.left !== null) {
-        queue.push(currentNode.left);
-      }
-      if (currentNode.right !== null) {
-        queue.push(currentNode.right);
-      }
-    }
-
-    return null; // Node not found in the tree
-  }
 }
