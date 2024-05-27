@@ -1,3 +1,7 @@
+// Name: Esan Miracle Olaoluwa
+// E-mail: miracleesan7@gmail.com
+//github-username: MiracleDev0
+
 class TreeNode<T>{
     value: T;
     left: TreeNode<T> | null;
