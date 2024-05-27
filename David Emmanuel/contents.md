@@ -3,13 +3,9 @@
 ## Main Projects
 
 **Project 1: Address Book System.**
-
 - Implement an address book system using **OOP** principles. Each contact should be represented as an object with attributes like name, phone number, and address. Demonstrate inheritance and encapsulation in your implementation.
 
-
-
 **Project 2: Online Shopping System**
-
 - Design and implement a simple online shopping system. Use interfaces for different types of products, and demonstrate composition and aggregation for the shopping cart. Apply SOLID principles in your design.
 
 **Project 3: Simple Task Manager**
@@ -55,3 +51,7 @@
 
 ### Week 7:
 - Implement breadth-first tree traversal
+- Implement depth-first tree traversal
+    - Pre-order
+    - In-order
+    - Post-order
