@@ -1,3 +1,7 @@
+//Ajibola Akorede 
+//ajibolaakorede2021@gmail.com
+
+
 class TreeNode<T>{
     value: T;
     left: TreeNode<T> | null;
