@@ -2,6 +2,7 @@
 // email - catherineanokwuru@gmail.com
 // github - Catherine-Anokwuru
 
+
 class TNode<T> {
   data: T;
   lp: TNode<T> | null;
