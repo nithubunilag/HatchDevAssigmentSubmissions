@@ -1,7 +1,6 @@
-//Matthew Oluwafisayo Adeniyi
-//matthewgodsent@gamil.com
+//Name: Matthew Oluwafisayo Adeniyi
+//Email: matthewgodsent@gamil.com
 
-    
 class TreeNode<T> {
     value: T;
     left: TreeNode<T> | null;
