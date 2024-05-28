@@ -1,3 +1,7 @@
+Matthew Oluwafisayo Adeniyi
+matthewgodsent@gamil.com
+
+    
 class TreeNode<T> {
     value: T;
     left: TreeNode<T> | null;
