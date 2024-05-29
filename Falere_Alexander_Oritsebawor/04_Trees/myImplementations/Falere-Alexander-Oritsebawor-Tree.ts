@@ -1,3 +1,4 @@
+// Email:alexanderfalere@gmail.com
 //Start by setting type
 type TNode<T>={
     value:T;
