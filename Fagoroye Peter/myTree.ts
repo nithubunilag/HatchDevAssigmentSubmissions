@@ -171,4 +171,4 @@ console.log(mytree.preOrderrTraversal());
 console.log("......................");
 console.log(mytree.inOrderrTraversal());
 console.log("......................");
-console.log(mytree.postOrderrTraversal());
+console.log(mytree.postOrderrTraversalc dcd ());
