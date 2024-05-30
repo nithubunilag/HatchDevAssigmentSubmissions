@@ -1,3 +1,9 @@
+/**
+ * FULL NAME: Abdulkareem Mustapha Akanmu
+ * EMAIL: aphatheology@gmail.com
+ * GITHUB USERNAME: Aphatheology
+ */
+
 class Task {
   id: number;
   description: string;

@@ -1,3 +1,9 @@
+/**
+ * FULL NAME: Abdulkareem Mustapha Akanmu
+ * EMAIL: aphatheology@gmail.com
+ * GITHUB USERNAME: Aphatheology
+ */
+
 function bubbleSort<T>(array: T[]): T[] {
   let n = array.length;
   let swapped: boolean;

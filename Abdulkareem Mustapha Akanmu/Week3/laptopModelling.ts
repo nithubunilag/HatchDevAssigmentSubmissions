@@ -1,3 +1,9 @@
+/**
+ * FULL NAME: Abdulkareem Mustapha Akanmu
+ * EMAIL: aphatheology@gmail.com
+ * GITHUB USERNAME: Aphatheology
+ */
+
 // ### Week 3: OOP continued, SOLID Design
 // Laptop modelling project using the principles of composition and aggregation.
 

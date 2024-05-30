@@ -1,3 +1,9 @@
+/**
+ * FULL NAME: Abdulkareem Mustapha Akanmu
+ * EMAIL: aphatheology@gmail.com
+ * GITHUB USERNAME: Aphatheology
+ */
+
 class DNode<T> {
   data: T;
   next: DNode<T> | null = null;

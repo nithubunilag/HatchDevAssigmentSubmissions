@@ -1,3 +1,9 @@
+/**
+ * FULL NAME: Abdulkareem Mustapha Akanmu
+ * EMAIL: aphatheology@gmail.com
+ * GITHUB USERNAME: Aphatheology
+ */
+
 // Design and implement a simple online shopping system. Use interfaces for different types of products, and demonstrate composition and aggregation for the shopping cart. Apply SOLID principles in your design.
 
 interface Product {

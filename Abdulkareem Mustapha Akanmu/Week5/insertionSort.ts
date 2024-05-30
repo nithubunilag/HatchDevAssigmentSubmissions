@@ -1,3 +1,9 @@
+/**
+ * FULL NAME: Abdulkareem Mustapha Akanmu
+ * EMAIL: aphatheology@gmail.com
+ * GITHUB USERNAME: Aphatheology
+ */
+
 function insertionSort<T>(array: T[]): T[] {
   for (let i = 1; i < array.length; i++) {
       let key = array[i];

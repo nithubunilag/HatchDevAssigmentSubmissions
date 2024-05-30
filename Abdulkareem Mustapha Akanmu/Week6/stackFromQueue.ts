@@ -1,3 +1,9 @@
+/**
+ * FULL NAME: Abdulkareem Mustapha Akanmu
+ * EMAIL: aphatheology@gmail.com
+ * GITHUB USERNAME: Aphatheology
+ */
+
 class StackFromQueue<T> {
   private queue1: Queue<T> = new Queue<T>();
   private queue2: Queue<T> = new Queue<T>();

@@ -1,5 +1,8 @@
-// Abdulkareem Mustapha Akanmu
-// aphatheology@gmail.com
+/**
+ * FULL NAME: Abdulkareem Mustapha Akanmu
+ * EMAIL: aphatheology@gmail.com
+ * GITHUB USERNAME: Aphatheology
+ */
 
 class TreeNode<T> {
   data: T;
