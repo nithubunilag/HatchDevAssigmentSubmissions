@@ -1,0 +1,4 @@
+1. Leetcode Binary tree Q.102
+
+2. Binary Search Tree
+3. Explain quicksort in a README.MD file
