@@ -59,12 +59,38 @@ class Playlist<T> {
       }
       removeNode = prev!.next;
       if (prev && removeNode) {
-      prev.next = removeNode.next;
-    }
-
+        prev.next = removeNode.next;
+      }
     }
     this.size--;
-    return removeNode?.media
+    return removeNode?.media;
+  }
+
+  shuffle() {
+    if (!this.head || !this.head.next) {
+      return;
+    }
+
+    let current = this.head;
+    let store: Media<T>[] = [];
+
+    while (current) {
+      store.push(current);
+      current = current.next!;
+    }
+
+    for (let i = store.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [store[i], store[j]] = [store[j], store[i]]
+    }
+
+    this.head = store[0]
+    current = this.head
+    for(let i = 1; i < store.length; i++){
+      current.next = store[i]
+      current = current.next
+    }
+    current.next = null
   }
 
   print() {
@@ -74,7 +100,7 @@ class Playlist<T> {
     }
 
     let currentTrack = this.head;
-    let trackNo = 1
+    let trackNo = 1;
     console.log(`Playlist: ${this.name}`);
 
     while (currentTrack) {
@@ -87,27 +113,27 @@ class Playlist<T> {
   }
 }
 
-const secular = new Playlist("Secular");
-secular.add({
-  name: "Oceans",
-  id: "33",
-  artist: "Peter Poe",
-  yearOfRelease: 2002,
-});
-secular.add({
-  name: "river",
-  id: "23",
-  artist: "legend turner",
-  yearOfRelease: 2022,
-});
-secular.add({
-  name: "woman",
-  id: "3",
-  artist: "simi",
-  yearOfRelease: 2021,
-});
-secular.remove(1)
-secular.print();
+// const secular = new Playlist("Secular");
+// secular.add({
+//   name: "Oceans",
+//   id: "33",
+//   artist: "Peter Poe",
+//   yearOfRelease: 2002,
+// });
+// secular.add({
+//   name: "river",
+//   id: "23",
+//   artist: "legend turner",
+//   yearOfRelease: 2022,
+// });
+// secular.add({
+//   name: "woman",
+//   id: "3",
+//   artist: "simi",
+//   yearOfRelease: 2021,
+// });
+// secular.remove(1)
+// secular.print();
 
 const gospel = new Playlist("Gospel");
 gospel.add({
@@ -128,4 +154,17 @@ gospel.add({
   artist: "Mercy Chinwo",
   yearOfRelease: 2015,
 });
+gospel.add({
+  name: "Majesty",
+  id: "240",
+  artist: "Max",
+  yearOfRelease: 2005,
+});
+gospel.add({
+  name: "In the room",
+  id: "3440",
+  artist: "Maverick city",
+  yearOfRelease: 2024,
+});
+gospel.shuffle();
 gospel.print();
