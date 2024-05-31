@@ -65,4 +65,44 @@ class BinaryTree<T>{
       
     }
   }
+
+    preorderArray: T[] = [];
+    preorderTraversal(node:BNode<T> | null){
+
+        if (node == null)
+            return []
+
+        this.preorderArray.push(node.data)
+        this.preorderTraversal(node!.left)
+        this.preorderTraversal(node!.right)
+
+        return this.preorderArray;
+    }
+
+    
+    inorderArray: T[] = [];
+    inorderTraversal(node:BNode<T> | null){
+
+        if (node == null)
+            return []
+
+        this.inorderTraversal(node!.left)
+        this.inorderArray.push(node.data)
+        this.inorderTraversal(node!.right)
+
+        return this.inorderArray;
+    }
+
+    postorderArray: T[] = [];
+    postorderTraversal(node:BNode<T> | null){
+
+        if (node == null)
+            return []
+
+        this.postorderTraversal(node!.left)
+        this.postorderTraversal(node!.right)
+        this.postorderArray.push(node.data)
+
+        return this.postorderArray;
+    }
 }
