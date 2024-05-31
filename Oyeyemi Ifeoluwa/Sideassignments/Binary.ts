@@ -82,7 +82,7 @@ class binaryTree<T> {
             result.push(node.value)
             traverse(node.right)
         }
-        traverse
+        traverse(this.root)
         return result
     }
 
@@ -95,7 +95,7 @@ class binaryTree<T> {
             traverse(node.right)
             result.push(node.value)
         }
-        traverse
+        traverse(this.root)
         return result
 
     }
@@ -124,3 +124,6 @@ tree.insert(15)
 
 console.log(tree)
 console.log(tree.traverse())
+console.log(tree.inOrder(tree.root))
+console.log(tree.preOrder(tree.root))
+console.log(tree.postOrder(tree.root))
