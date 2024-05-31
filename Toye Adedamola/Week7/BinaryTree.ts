@@ -1,3 +1,6 @@
+//Toye Adedamola Taibat
+//toye.adedamola@gmail.com 
+
 class BinaryTreeNode<T>{
     data: T;
     left_node: BinaryTreeNode<T> | null;

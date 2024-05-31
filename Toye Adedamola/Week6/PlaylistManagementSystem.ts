@@ -1,3 +1,7 @@
+//Toye Adedamola Taibat
+//toye.adedamola@gmail.com 
+
+
 //Every Song must have the following:
 interface Song{
     id: number;
