@@ -55,3 +55,7 @@
     - Pre-order
     - In-order
     - Post-order
+
+### Week 8:
+- In your own words, explain quick sort
+- LeetCode #102 #144 and #145
