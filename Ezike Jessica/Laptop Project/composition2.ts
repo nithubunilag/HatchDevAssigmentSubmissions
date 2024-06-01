@@ -1,3 +1,6 @@
+// NAME :>      EZIKE JESSICA
+//EMAIL :>      jessicaezike.je@gmail.com
+
 import { Laptop, OperatingSystem, BitKind, Keyboard, KeyboardKind, KeyboardLayout, NetworkInterfaceCard, Display, HardDisk } from "./Composition.ts";
 
 // keyboard instances for the Array of Keyboards

@@ -1,4 +1,7 @@
- ////////////Composition
+// NAME :>      EZIKE JESSICA
+//EMAIL :>      jessicaezike.je@gmail.com
+
+////////////Composition
 
 //defining the Laptop class
  class Laptop {

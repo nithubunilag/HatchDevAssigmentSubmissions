@@ -1,4 +1,7 @@
 ////////////////////////////////////////////////////////////////////////////
+// NAME :>      EZIKE JESSICA
+//EMAIL :>      jessicaezike.je@gmail.com
+
 //////////////Doublylinked list
 class node<T> {
     prev: node<T>  | null = null;  ///This points to the previouse address

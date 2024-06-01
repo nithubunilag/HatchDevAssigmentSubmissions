@@ -1,3 +1,6 @@
+// NAME :>      EZIKE JESSICA
+//EMAIL :>      jessicaezike.je@gmail.com
+
 function flipAndInvertImage(image: number[][]): number[][] {
     let flippedImage: number[][] = []
     

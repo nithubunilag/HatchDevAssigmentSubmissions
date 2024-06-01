@@ -1,3 +1,6 @@
+// NAME :>      EZIKE JESSICA
+//EMAIL :>      jessicaezike.je@gmail.com
+
 import{ShoppingCart, Groceries, CareProduct, Toiletries, Product, Bread, Fruit, Vegetables, DairyProduct} from "./Project2.ts";
 
 //defining instance

@@ -1,4 +1,6 @@
 /////Project 1
+// NAME :>      EZIKE JESSICA
+//EMAIL :>      jessicaezike.je@gmail.com
 
 class Contact {
     private name: string

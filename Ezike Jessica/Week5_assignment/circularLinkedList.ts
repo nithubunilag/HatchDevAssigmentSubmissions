@@ -1,3 +1,6 @@
+// NAME :>      EZIKE JESSICA
+//EMAIL :>      jessicaezike.je@gmail.com
+
 class node<T> {
     data: T;
     nextNode: node<T> 

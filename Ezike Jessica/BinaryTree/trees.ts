@@ -1,3 +1,6 @@
+// NAME :>      EZIKE JESSICA
+//EMAIL :>      jessicaezike.je@gmail.com
+
 class node<T> {
     leftPointer: node<T>
     data: T
