@@ -15,6 +15,7 @@ function quickSort(arrData: number[]):number[]{
   return [...quickSort(left), pivot, ...quickSort(right)]
 }
 
-const arrData = [3, 25, -5, 9, 4];
+const arrData = [3, 9, -5, 25, 4];
 
 console.log(quickSort(arrData));
+
