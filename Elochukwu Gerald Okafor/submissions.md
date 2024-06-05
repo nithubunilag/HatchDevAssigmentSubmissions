@@ -3,12 +3,14 @@
 Tracking my NitHub Hatch Dev weekly project source code.
 
 ## Week 2 - 4
+
 1. Address Book System
 2. Shopping Cart System
 3. Laptop Model
 4. Laptop Model (Update function)
 
 ## Week 5
+
 1. Bubble Sort
 2. Insertion Sort
 3. Linked List (Singly)
@@ -18,6 +20,7 @@ Tracking my NitHub Hatch Dev weekly project source code.
 7. Stack
 
 ## Week 6
+
 1. Binary Tree
 2. Doubly Linked List
 3. Circular Linked List (singly)
@@ -29,4 +32,15 @@ Tracking my NitHub Hatch Dev weekly project source code.
 9. HackerRank (reverse linked list)
 
 ## Week 7
+
 1. Binary Tree Traversal
+
+## Week 8
+
+1. Quick sort (algorithm and explanation)
+2. LeetCode Tree Traversal:
+    1. Post Order: https://leetcode.com/problems/binary-tree-postorder-traversal
+    2. Pre Order: https://leetcode.com/problems/binary-tree-preorder-traversal
+    3. In Order: https://leetcode.com/problems/binary-tree-inorder-traversal
+    4. Level Order: https://leetcode.com/problems/binary-tree-level-order-traversal
+    5. Delete Node in a BST: https://leetcode.com/problems/delete-node-in-a-bst
