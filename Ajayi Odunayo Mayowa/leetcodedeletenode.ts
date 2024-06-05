@@ -49,39 +49,47 @@ class BST {
         this.root = this.deleteNode(this.root, value);
     }
 
-    private deleteNode(root: TreeNode | null, value: number): TreeNode | null {
-        if (!root) {
-            return null;
-        }
-
-        if (value < root.value) {
-            root.left = this.deleteNode(root.left, value);
-        } else if (value > root.value) {
-            root.right = this.deleteNode(root.right, value);
-        } else {
-            // Case 1: No child or only one child
-            if (!root.left) {
-                return root.right;
-            } else if (!root.right) {
-                return root.left;
-            }
-
-            // Case 2: Node with two children
-            root.value = this.minValue(root.right);
-            root.right = this.deleteNode(root.right, root.value);
-        }
-
-        return root;
+    function deleteNode(root: TreeNode | null, key: number): TreeNode | null {
+    if (root === null) {
+        return null; // If the tree is empty, return null
     }
 
-    private minValue(node: TreeNode): number {
-        let min = node.value;
-        while (node.left) {
-            min = node.left.value;
-            node = node.left;
+    // If the key to be deleted is less than the root's key,
+    // then it lies in the left subtree
+    if (key < root.val) {
+        root.left = deleteNode(root.left, key);
+    } 
+    // If the key to be deleted is greater than the root's key,
+    // then it lies in the right subtree
+    else if (key > root.val) {
+        root.right = deleteNode(root.right, key);
+    } 
+    // If key is the same as root's key, then this is the node to be deleted
+    else {
+        // Node with only one child or no child
+        if (root.left === null) {
+            return root.right;
+        } else if (root.right === null) {
+            return root.left;
         }
-        return min;
+
+        // Node with two children: Get the inorder successor (smallest in the right subtree)
+        root.val = minValue(root.right);
+
+        // Delete the inorder successor
+        root.right = deleteNode(root.right, root.val);
     }
+    return root;
+}
+
+function minValue(root: TreeNode | null): number {
+    let min = root!.val;
+    while (root!.left !== null) {
+        min = root!.left.val;
+        root = root!.left;
+    }
+    return min;
+}
 
     // Utility function to print the BST inorder
     inorder(): void {
