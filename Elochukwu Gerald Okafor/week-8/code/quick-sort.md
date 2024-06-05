@@ -1,3 +1,9 @@
+## Details
+
+1. Full Name: Elochukwu Okafor
+2. GitHub Username: dev-xero
+
+
 ## Quick Sort Algorithm
 
 This is an efficient sorting algorithm based on the divide and conquer principle. It starts by selecting a pivot point which splits the array into two smaller sub-arrays. One the left of the pivot are elements smaller than the pivot value, and on the right are elements greater than it. These sub-arrays are then repeatedly sorted recursively until all the elements are in order.
