@@ -1,3 +1,6 @@
+// NAME :>      EZIKE JESSICA
+//EMAIL :>      jessicaezike.je@gmail.com
+
 function quicksort(arr: number[]): number[] {
     
     if (arr.length < 2) {
