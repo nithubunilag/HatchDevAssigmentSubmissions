@@ -10,7 +10,7 @@ class InOrderTreeNode {
   constructor(
     public data: number,
     public left: InOrderTreeNode | null = null,
-    public right: InOrderTreeNode | null = null
+   k public right: InOrderTreeNode | null = null
   ) {}
 }
 
