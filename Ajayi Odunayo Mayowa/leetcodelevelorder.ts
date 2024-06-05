@@ -1,3 +1,7 @@
+//Name: Ajayi Odunayo Mayowa
+//email: odunayoajayi2004@gmail.com
+//github: odunayo222
+
 class TreeNode {
     val: number;
     left: TreeNode | null;
