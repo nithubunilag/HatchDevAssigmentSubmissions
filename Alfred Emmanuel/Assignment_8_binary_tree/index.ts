@@ -1,3 +1,6 @@
+//Alfred Emmanuel
+//ealfred828@gmail.com
+
 class Node<T> {
     data: T;
     leftChild: Node<T> | null;
