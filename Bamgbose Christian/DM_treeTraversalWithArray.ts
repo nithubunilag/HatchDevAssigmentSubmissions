@@ -67,6 +67,60 @@ class BinaryTree {
             this.inOrder(node.right, result); //the right subtree
         }
     }
+
+    // Deleting a node from the binary tree
+    deleteNode(value: number): void {
+        this.root = this.deleteNodeRecursive(this.root, value);
+    }
+
+    // Recursive function to delete a node from the binary tree
+    private deleteNodeRecursive(node: TreeNode | null, value: number): TreeNode | null {
+        if (node === null) {
+            return null;
+        }
+
+        if (value < node.value) {
+            node.left = this.deleteNodeRecursive(node.left, value);
+        } else if (value > node.value) {
+            node.right = this.deleteNodeRecursive(node.right, value);
+        } else {
+            // Node to be deleted is found
+
+            // Case 1: Node has no children
+            if (node.left === null && node.right === null) {
+                return null;
+            }
+
+            // Case 2: Node has only one child
+            if (node.left === null) {
+                return node.right;
+            }
+
+            if (node.right === null) {
+                return node.left;
+            }
+
+            // Case 3: Node has two children
+            const minValue = this.findMinValue(node.right);
+            node.value = minValue;
+            node.right = this.deleteNodeRecursive(node.right, minValue);
+        }
+
+        return node;
+    }
+
+    //function to find the minimum value in a binary tree
+    private findMinValue(node: TreeNode): number {
+        let minValue = node.value;
+        while (node.left !== null) {
+            minValue = node.left.value;
+            node = node.left;
+        }
+        return minValue;
+    }
+
+
+
 }
 
 
