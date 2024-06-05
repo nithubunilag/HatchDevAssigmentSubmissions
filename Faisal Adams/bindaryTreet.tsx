@@ -149,3 +149,6 @@ tree.insert(15);
 
 console.log(tree);
 console.log(tree.bfstraverse());
+console.log(tree.preOrderStack());
+console.log(tree.inOrderStack());
+console.log(tree.postOrderStack());
