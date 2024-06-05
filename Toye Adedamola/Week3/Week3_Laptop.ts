@@ -1,4 +1,4 @@
-import { Laptop, KeyBoard, KeyBoardKind, KeyBoardLayout,BitKind, Display, DisplayType, NetworkInterfaceCard, HardDisk, HardDiskType, OperatingSystem} from "./ModelLaptopWithComposition.ts";
+import { Laptop, KeyBoard, KeyBoardKind, KeyBoardLayout,BitKind, Display, DisplayType, NetworkInterfaceCard, HardDisk, HardDiskType, OperatingSystem} from "./Week3_ModelLaptopWithComposition";
 
 const display = new Display();
 display.displaySize = 16; 
