@@ -1,3 +1,8 @@
+//Oyetoro Abdullah Iyonuoluwa
+//Abdullah Oyetoro
+//Oyehabdullhigh@gmail.com
+
+//Quicksort
 function quickSort(arr: number[], start: number = 0, end: number =arr.length-1): void {
   if (start < end) {
       const partIdx = partition(arr, start, end);
