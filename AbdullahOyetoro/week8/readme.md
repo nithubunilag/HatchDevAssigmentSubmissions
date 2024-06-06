@@ -7,4 +7,10 @@ end: which is the last element of the array which is by default equal to the len
 
 note: the pivot element can be any random variable in the list but i chose the pivot to be the same as the last elemnt in the list
 
-3. the partition function takes three parameters (arr,start,end) same as the quicksort parameters
+3. the partition function takes three parameters (arr,start,end) same as the quicksort parameters except they dont have default values
+
+4. I initialize the pivot element and iterate through the arrray putting elements less than the pivot in the right and elements greater in the right while sorting the array in place
+
+5. Finally, I recursively call quicksort on the left and rigtht subarrays before and after the pivot element after partiotionning
+
+process repeats itself until the array is finally sorted itself.
