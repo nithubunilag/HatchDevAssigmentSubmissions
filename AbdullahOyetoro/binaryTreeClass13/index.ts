@@ -47,7 +47,7 @@ class BinaryT<T>{
     }
   }
  
-  traversal(){
+  traversalLO(){
     if(!this.root){
       return
     }
@@ -67,7 +67,7 @@ class BinaryT<T>{
     }
     return travArray
   }
-  traversalDFS(){
+  traversalDFSI(){
     if (!this.root){
       return
     }
@@ -87,6 +87,12 @@ class BinaryT<T>{
       currentNode = currentNode.right;
     }
     return travArray
+  }
+  traversalDFSP(){
+    if(!this.root)return [];
+    let stack :T[] = [];
+    let traversalArray: T[] = []
+
 
   }
 }
@@ -109,8 +115,9 @@ bt5.insert(14)
 bt5.insert(15)
 bt5.insert(16)
 // bt5.insert(17)
-console.log(bt5.traversal())
-console.log(bt5.traversalDFS())
+console.log(bt5.traversalLO())
+console.log(bt5.traversalDFSI())
+
 
 
 /**BINARY TREE
@@ -119,3 +126,6 @@ console.log(bt5.traversalDFS())
  * MOVE TO RIGHT
  * IF NO PUT IN LEFT
  * IF BOTH*/
+
+// Oyetoro Abdullah Iyonuoluwa
+//Oyehabdullhigh@Gmail.com

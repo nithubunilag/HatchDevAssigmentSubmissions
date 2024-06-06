@@ -1,3 +1,5 @@
+// Oyetoro Abdullah Iyonuoluwa
+//Oyehabdullhigh@gmail.com
 class Keyboard{
   constructor(public readonly kind:KeyboardKind, public readonly layout:KeyboardLayout ){}}
 
