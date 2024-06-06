@@ -1,0 +1,8 @@
+{
+  "files.associations": {
+    "*.embeddedhtml": "html",
+    "*.py": "pip-requirements",
+    "*.asm": "masm",
+    "plyconfig.json": "jsonc"
+  }
+}
