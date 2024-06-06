@@ -7,4 +7,4 @@ end: which is the last element of the array which is by default equal to the len
 
 note: the pivot element can be any random variable in the list but i chose the pivot to be the same as the last elemnt in the list
 
-3. the partition function takes three parameters ()
+3. the partition function takes three parameters (arr,start,end) same as the quicksort parameters
