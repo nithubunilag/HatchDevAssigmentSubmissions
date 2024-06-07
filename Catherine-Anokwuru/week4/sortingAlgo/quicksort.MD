@@ -1,0 +1,3 @@
+In quicksort, you select a midpoint/pivot, then you define two arrays - a left array and a right array. So this leaves us with three arrays, the left, the data array(arrData) and the write The aim of this is so we can organize the numbers greater than the midpoint in the left array and the numbers less than the midpoint in the right array.
+So we select a number as the midpoint then loop through the array data checking if the numbers are greater or less than the midpoint, if it's greater than we push the number to the left array and if it's less than we push it to the right array.
+Then we spread the left sorted array into a new array, add the midpoint and spread the right sorted array and we have an array sorted in descending order.
