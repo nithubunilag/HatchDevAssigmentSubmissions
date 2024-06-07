@@ -29,8 +29,12 @@ class DoublyLinkedList<T>{
         
     }
     
-    delete(val:T){
+    delete(val:T, position?:number){
         
+    }
+    
+    shuffle(){
+
     }
 }
 let doubleList = new DoublyLinkedList();
