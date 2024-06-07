@@ -1,0 +1,60 @@
+{
+  "lastId": 3,
+  "products": [
+    {
+      "id": 1,
+      "name": "HP EliteBook 840",
+      "price": 485950,
+      "seller": "DaveIsNo1",
+      "ratings": [
+        5,
+        5
+      ],
+      "details": {
+        "processor": "Intel Core i5",
+        "ram": "8GB",
+        "storage": "256GB SSD",
+        "display": "14 inch",
+        "os": "Windows 10 Pro"
+      }
+    },
+    {
+      "id": 4,
+      "name": "Sky Raiders - Five Kingdoms, Book 1",
+      "price": 13500,
+      "ratings": [],
+      "details": {
+        "title": "Sky Raiders",
+        "author": "Brandon Mull",
+        "isbn": ""
+      },
+      "seller": "DaveIsNo1"
+    }
+  ],
+  "users": [
+    {
+      "username": "DaveIsNo1",
+      "email": "daveisno1@gmail.com",
+      "password": "#Shopping1",
+      "cart": {
+        "items": []
+      }
+    },
+    {
+      "username": "azmk",
+      "email": "azmk27325@gmail.com",
+      "password": "Thelongway12345",
+      "cart": {
+        "items": []
+      }
+    },
+    {
+      "username": "olusijay",
+      "email": "oluwaseunjacob05@gmail.com",
+      "password": "password",
+      "cart": {
+        "items": []
+      }
+    }
+  ]
+}
