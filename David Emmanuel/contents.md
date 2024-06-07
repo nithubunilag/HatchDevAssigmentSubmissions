@@ -59,3 +59,9 @@
 ### Week 8:
 - In your own words, explain quick sort
 - LeetCode #102 #144 #145 #450
+
+### Week 9: Sorting Algorithms
+Implement the pseudo-code for the following sorting algorithms:
+- Selection Sort
+- Bubble Sort
+- Insertion Sort
