@@ -2,3 +2,5 @@
 
 2. Binary Search Tree
 3. Explain quicksort in a README.MD file
+
+4. Leetcode Binary tree Q. 450 (https://leetcode.com/problems/delete-node-in-a-bst)
