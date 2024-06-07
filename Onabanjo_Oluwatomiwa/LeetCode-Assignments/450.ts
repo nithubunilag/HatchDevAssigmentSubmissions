@@ -31,3 +31,4 @@ function findMinNode(root: TreeNode): TreeNode {
     }
     // else recursively set the root to root.left and run the findMinNode function again
     return findMinNode(root.left);
+}
