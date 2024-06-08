@@ -1,3 +1,7 @@
+/*
+** Farida Momoh
+** farimomoh@gmail.com
+*/
 function insertionSort(arr:number[]){
     for (let i = 1; i < arr.length; i++){
         let key = arr[i];
