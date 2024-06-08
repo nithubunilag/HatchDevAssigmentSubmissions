@@ -1,0 +1,21 @@
+procedure bubbleSort(arr: list of sortable items)
+    n = length(arr)
+    swapped = false
+
+    for i = 0 to n-2 inclusive do
+        swapped = false
+        for j = 0 to n-i-2 inclusive do
+            if arr[j] > arr[j + 1] then
+                swap(arr[j], arr[j + 1])
+                swapped = true
+            end if
+        end for
+        if not swapped then
+            break
+        end if
+    end for
+
+    return arr
+end procedure
+
+

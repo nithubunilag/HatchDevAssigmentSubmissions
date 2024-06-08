@@ -1,0 +1,19 @@
+procedure quickSort(arr: list of sortable items, low: integer, high: integer)
+    if low < high then
+        pivotIndex = partition(arr, low, high)
+        quickSort(arr, low, pivotIndex - 1)
+        quickSort(arr, pivotIndex + 1, high)
+
+procedure partition(arr: list of sortable items, low: integer, high: integer): integer
+    pivot = arr[high]
+    i = low - 1
+
+    for j = low to high - 1 do
+        if arr[j] < pivot then
+            i = i + 1
+            swap(arr[i], arr[j])
+        end if
+    end for
+
+    swap(arr[i + 1], arr[high])
+    return i + 1

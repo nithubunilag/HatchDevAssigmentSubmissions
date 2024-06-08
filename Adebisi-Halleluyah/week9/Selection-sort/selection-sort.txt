@@ -1,0 +1,19 @@
+procedure selectionSort(arr: list of sortable items)
+    n = length(arr)
+
+    for i = 0 to n-2 inclusive do
+        minIndex = i
+
+        for j = i + 1 to n-1 inclusive do
+            if arr[j] < arr[minIndex] then
+                minIndex = j
+            end if
+        end for
+
+        if minIndex != i then
+            swap(arr[i], arr[minIndex])
+        end if
+    end for
+
+    return arr
+end procedure
