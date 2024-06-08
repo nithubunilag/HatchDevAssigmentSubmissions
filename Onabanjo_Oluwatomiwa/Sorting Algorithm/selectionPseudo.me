@@ -1,0 +1,20 @@
+PROCEDURE selectionSort(A)
+  INPUT: A: An array of sortable items
+
+  n = LENGTH(A)
+  FOR i = 0 TO n-1 DO
+    min_index = i  // index of the minimum element found so far
+    FOR j = i + 1 TO n-1 DO
+      IF A[j] < A[min_index] THEN
+        min_index = j  // update the index of the minimum element
+      END IF
+    END FOR
+    SWAP(A[i], A[min_index])  // swap the minimum element with the current position
+  END FOR
+  OUTPUT: A (sorted in ascending order)
+
+
+  PROGRAM OUTPUT:
+  Enter the size of the array: 5
+  Enter the elements of the array: 10 2 3 4 5
+  Enter the size of the array: 5
