@@ -25,17 +25,17 @@ class binaryTree<T> {
     while (true) {
       // The while loop is passed in true, it will not run forever because we have return statements inside the loop that will break the loop.
       if (value === current.value) return undefined;
-      if (value < current.value) {
       if (!current.left) {
         current.left = newNode;
         return this;
       }
       current = current.left;
-    } else if (!current.right) {
+
+      if (!current.right) {
         current.right = newNode;
         return this;
       }
-      current = current.right!;
+      current = current.right;
     }
   }
 
@@ -58,20 +58,23 @@ class binaryTree<T> {
 
     let output: T[] = [];
 
-    output.push(node.value!);
-    output.push(...this.preOrder(node.left));
-    output.push(...this.preOrder(node.right));
+    output.push(node?.value!);
+    output.push(...this.preOrder(node!.left));
+    output.push(...this.preOrder(node!.right));
 
     return output;
   }
 
   inOrder(node: treeNode<T> | null): T[] {
     if (!node) return [];
-    return [
-      ...this.inOrder(node.left),
-      node.value,
-      ...this.inOrder(node.right),
-    ];
+
+    let output: T[] = [];
+
+    output.push(...this.inOrder(node!.left));
+    output.push(node?.value!);
+    output.push(...this.inOrder(node!.right));
+
+    return output;
   }
 
   postOrder(node: treeNode<T> | null): T[] {
@@ -107,7 +110,8 @@ bst.insert(20);
 bst.insert(5);
 bst.insert(25);
 
-// console.log(bst.bfstraverse());
 console.log(bst.postOrder(bst.root));
 console.log(bst.preOrder(bst.root));
 console.log(bst.inOrder(bst.root));
+
+// console.log(bst.bfstraverse());
