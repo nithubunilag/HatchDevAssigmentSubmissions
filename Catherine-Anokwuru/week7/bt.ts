@@ -111,4 +111,3 @@ bst.insert(25);
 console.log(bst.postOrder(bst.root));
 console.log(bst.preOrder(bst.root));
 console.log(bst.inOrder(bst.root));
-
