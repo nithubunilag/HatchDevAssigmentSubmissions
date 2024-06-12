@@ -1,0 +1,17 @@
+PROCEDURE bubbleSort(A)
+  INPUT: A: An array of sortable items
+
+  n = LENGTH(A)
+  FOR i = 0 TO n-1 DO
+    swapped = FALSE
+    FOR j = 0 TO n-i-1 DO
+      IF A[j] > A[j+1] THEN
+        SWAP(A[j], A[j+1])
+        swapped = TRUE
+      END IF
+    END FOR
+    IF NOT swapped THEN
+      BREAK
+    END IF
+  END FOR
+  OUTPUT: A (sorted in ascending order)

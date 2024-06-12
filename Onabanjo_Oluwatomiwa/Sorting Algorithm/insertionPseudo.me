@@ -1,0 +1,16 @@
+PROCEDURE insertionSort(A)
+  INPUT: A: An array of sortable items
+
+  n = LENGTH(A)
+  FOR i = 1 TO n-1 DO
+    key = A[i]  // element to be inserted
+    j = i - 1  // index of the element being compared
+
+    WHILE (j >= 0 AND A[j] > key) DO
+      A[j + 1] = A[j]  // shift elements one position to the right
+      j = j - 1         // move one position back to compare
+    END WHILE
+
+    A[j + 1] = key  // insert the key element at the correct sorted position
+  END FOR
+  OUTPUT: A (sorted in ascending order)
