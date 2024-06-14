@@ -1,0 +1,98 @@
+// Component: CPU
+class CPU {
+    constructor(private model: string) {}
+
+    get_model(): string {
+        return this.model;
+    }
+}
+
+// Component: RAM
+class RAM {
+    constructor(private size: number) {}
+
+    get_size(): number {
+        return this.size;
+    }
+}
+
+// Component: Storage
+class Storage {
+    constructor(private capacity: number) {}
+
+    get_capacity(): number {
+        return this.capacity;
+    }
+}
+
+// Component: Display
+class Display {
+    constructor(private size: number) {}
+
+    get_size(): number {
+        return this.size;
+    }
+}
+
+// Laptop Model
+class Laptop {
+    constructor(
+        private cpu: CPU,
+        private ram: RAM,
+        private storage: Storage,
+        private display: Display
+    ) {}
+
+    update(specs: { cpu?: CPU, ram?: RAM, storage?: Storage, display?: Display }): void {
+        if (specs.cpu) {
+            this.cpu = specs.cpu;
+        }
+        if (specs.ram) {
+            this.ram = specs.ram;
+        }
+        if (specs.storage) {
+            this.storage = specs.storage;
+        }
+        if (specs.display) {
+            this.display = specs.display;
+        }
+    }
+
+    get_specs(): string {
+        return `CPU: ${this.cpu.get_model()}, RAM: ${this.ram.get_size()}GB, Storage: ${this.storage.get_capacity()}GB, Display: ${this.display.get_size()} inches`;
+    }
+}
+
+// Demo
+const cpu = new CPU("Intel Core i7");
+const ram = new RAM(16);
+const storage = new Storage (512);
+const display = new Display(15.6);
+
+const laptop = new Laptop(cpu, ram, storage, display);
+console.log("Initial Specs:", laptop.get_specs());
+
+const updatedSpecs = {
+    cpu: new CPU("Intel Core i9"),
+    ram: new RAM(32),
+    storage: new Storage (1024),
+    display: new Display(17)
+};
+
+laptop.update(updatedSpecs);
+console.log("Updated Specs:", laptop.get_specs());
+
+update(specs: { cpu?: CPU, ram?: RAM, storage?: Storage, display?: Display }): void {
+    if (specs.cpu) {
+        this.cpu = specs.cpu;
+    }
+    if (specs.ram) {
+        this.ram = specs.ram;
+    }
+    if (specs.storage) {
+        this.storage = specs.storage;
+    }
+    if (specs.display) {
+        this.display = specs.display;
+    }
+}

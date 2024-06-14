@@ -1,0 +1,46 @@
+class Task {
+    constructor(public id: number, public title: string, public description: string) {}
+}
+class TaskManager {
+    private tasks: Task[] = [];
+
+    // Method to add a task
+    addTask(task: Task): void {
+        this.tasks.push(task);
+    }
+
+    // Method to delete a task by ID
+    deleteTask(id: number): void {
+        const index = this.tasks.findIndex(task => task.id === id);
+        if (index !== -1) {
+            this.tasks.splice(index, 1);
+            console.log(`Task with ID ${id} deleted successfully.`);
+        } else {
+            console.log(`Task with ID ${id} not found.`);
+        }
+    }
+
+    // Method to display all tasks
+    displayTasks(): void {
+        console.log("Tasks:");
+        this.tasks.forEach(task => {
+            console.log(`ID: ${task.id}, Title: ${task.title}, Description: ${task.description}`);
+        });
+    }
+}
+// Create a task manager
+const taskManager = new TaskManager();
+
+// Add tasks
+taskManager.addTask(new Task(1, "Task 1", "Description for Task 1"));
+taskManager.addTask(new Task(2, "Task 2", "Description for Task 2"));
+taskManager.addTask(new Task(3, "Task 3", "Description for Task 3"));
+
+// Display tasks
+taskManager.displayTasks();
+
+// Delete a task
+taskManager.deleteTask(2);
+
+// Display tasks after deletion
+taskManager.displayTasks();

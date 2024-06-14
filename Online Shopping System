@@ -1,0 +1,83 @@
+// Interface for Products
+interface Product {
+    get_name(): string;
+    get_price(): number;
+}
+
+// Concrete Product: Book
+class Book implements Product {
+    constructor(private name: string, private price: number, private author: string) {}
+
+    get_name(): string {
+        return this.name;
+    }
+
+    get_price(): number {
+        return this.price;
+    }
+}
+
+// Concrete Product: Clothing
+class Clothing implements Product {
+    constructor(private name: string, private price: number, private size: string) {}
+
+    get_name(): string {
+        return this.name;
+    }
+
+    get_price(): number {
+        return this.price;
+    }
+}
+
+// Interface for Cart Items
+interface CartItem {
+    calculate_price(): number;
+}
+
+// Concrete Cart Item
+class ProductCartItem implements CartItem {
+    constructor(private product: Product, private quantity: number) {}
+
+    calculate_price(): number {
+        return this.product.get_price() * this.quantity;
+    }
+}
+
+// Shopping Cart
+class ShoppingCart {
+    private items: CartItem[] = [];
+
+    add_item(item: CartItem): void {
+        this.items.push(item);
+    }
+
+    remove_item(item: CartItem): void {
+        const index = this.items.indexOf(item);
+        if (index !== -1) {
+            this.items.splice(index, 1);
+        }
+    }
+
+    calculate_total_price(): number {
+        let total_price = 0;
+        for (const item of this.items) {
+            total_price += item.calculate_price();
+        }
+        return total_price;
+    }
+}
+
+// Demo
+const book: Product = new Book("Python Programming", 30, "Guido van Rossum");
+const clothing: Product = new Clothing("T-shirt", 20, "L");
+
+const book_item: CartItem = new ProductCartItem(book, 2);
+const clothing_item: CartItem = new ProductCartItem(clothing, 1);
+
+const cart: ShoppingCart = new ShoppingCart();
+cart.add_item(book_item);
+cart.add_item(clothing_item);
+
+const total_price: number = cart.calculate_total_price();
+console.log("Total Price:", total_price);
