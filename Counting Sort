@@ -1,0 +1,28 @@
+function countingSort(arr: number[]): number[] {
+    const maxValue = Math.max(...arr);
+    const counts: number[] = new Array(maxValue + 1).fill(0);
+
+    // Count occurrences of each element
+    for (let i = 0; i < arr.length; i++) {
+        counts[arr[i]]++;
+    }
+
+    // Modify counts to store the actual position of elements in the sorted array
+    for (let i = 1; i < counts.length; i++) {
+        counts[i] += counts[i - 1];
+    }
+
+    // Build the sorted array
+    const sortedArray: number[] = new Array(arr.length);
+    for (let i = arr.length - 1; i >= 0; i--) {
+        sortedArray[counts[arr[i]] - 1] = arr[i];
+        counts[arr[i]]--;
+    }
+
+    return sortedArray;
+}
+
+// Example usage:
+const arr = [5, 3, 8, 4, 2, 1, 7, 6];
+console.log("Original array:", arr);
+console.log("Sorted array:", countingSort(arr));
