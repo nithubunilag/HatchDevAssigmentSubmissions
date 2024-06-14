@@ -65,3 +65,7 @@ Implement the pseudo-code for the following sorting algorithms:
 - Selection Sort
 - Bubble Sort
 - Insertion Sort
+
+Implement:
+- Quick sort
+- Merge sort
