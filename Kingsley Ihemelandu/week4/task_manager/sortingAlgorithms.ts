@@ -37,7 +37,7 @@ function merge<T>(left: T[], right: T[]): T[] {
   return merged.concat(left.slice(i)).concat(right.slice(j));
 }
 
-function selectionSort<T>(arr: T[]): T[] {
+export function selectionSort<T>(arr: T[]): T[] {
   for (let i = 0; i < arr.length - 1; i++) {
     let minIndex = i;
     for (let j = i + 1; j < arr.length; j++) {
@@ -76,3 +76,7 @@ function quickSort<T>(arr: T[]): T[] {
 
 // Remember, these sorting algorithms have different time complexities. Bubble sort has a worst-case time complexity of O(n^2), while merge sort and insertion sort have a time complexity of O(n log n) in most cases. Selection sort also has a time complexity of O(n^2). Choose the sorting algorithm that best suits your needs based on the size and characteristics of your data.
 
+
+function insertionSort() {
+  
+}
