@@ -56,3 +56,8 @@ Tracking my NitHub Hatch Dev weekly project source code.
    - Merge sort
    - Quick sort
    - Selection sort
+  
+## Week 10
+
+1. LeetCode Symmetric Tree: https://leetcode.com/problems/symmetric-tree
+2. LeetCode Search in Rotated Array: https://leetcode.com/problems/search-in-rotated-sorted-array
