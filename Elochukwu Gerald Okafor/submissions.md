@@ -44,3 +44,15 @@ Tracking my NitHub Hatch Dev weekly project source code.
     3. In Order: https://leetcode.com/problems/binary-tree-inorder-traversal
     4. Level Order: https://leetcode.com/problems/binary-tree-level-order-traversal
     5. Delete Node in a BST: https://leetcode.com/problems/delete-node-in-a-bst
+   
+## Week 9
+
+1. Pseudo code:
+   - Bubble sort
+   - Insertion sort
+   - Quick sort
+
+2. Sorting algorithms implementation:
+   - Merge sort
+   - Quick sort
+   - Selection sort
