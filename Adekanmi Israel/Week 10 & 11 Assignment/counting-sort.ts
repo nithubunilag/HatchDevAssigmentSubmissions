@@ -1,3 +1,7 @@
+// Adekanmi Israel
+// adekanmiisrael8@gmail.com
+// github.com/Israel-Adekanmi
+
 function countingSort(arr: number[]): number[] {
     if (arr.length === 0) return arr;
 
