@@ -1,3 +1,7 @@
+// Adekanmi Israel
+// adekanmiisrael8@gmail.com
+// github.com/Israel-Adekanmi
+
 let i: number, j: number, temp: number, pivot: number;
 
 const swap = (array: number[], i: number, j: number): void => {
