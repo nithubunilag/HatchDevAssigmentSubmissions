@@ -1,3 +1,6 @@
+// Adekanmi Israel
+// adekanmiisrael8@gmail.com
+// github.com/Israel-Adekanmi
 let n1: number, n2: number;
 
 const merge = (arr: number[], p: number, q: number, r: number) => {
