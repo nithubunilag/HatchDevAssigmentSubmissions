@@ -69,3 +69,6 @@ Implement the pseudo-code for the following sorting algorithms:
 Implement:
 - Quick sort
 - Merge sort
+
+### Week 10
+LeetCode #101, #33
