@@ -1,3 +1,21 @@
+function quick_sort_class(arr: number[]){
+    let p =arr[0];
+    let r = arr.length - 1;
+    let pivot = arr[r];
+    let i = p - 1;
+    for(let j=0; j<r;j++){
+        if(arr[j] <= pivot){
+            i += 1;
+            const temp = arr[j];
+            arr[j] = arr[i];
+            arr[i] = temp;
+        }
+    }
+    const temp = arr[i+1];
+    arr[j] = arr[i];
+    arr[i] = temp;
+
+}
 function quicksort(arr: number[]): void {
     const stack: [number, number][] = [[0, arr.length - 1]];
 
@@ -38,3 +56,4 @@ function partition(arr: number[], low: number, high: number): number {
 
 const data_4 = [4,90,6,12,87,4,6,3,0,9,6,2,89,543];
 const sortedUsingQuicksort = quicksort(data_4);
+console.log(sortedUsingQuicksort)
