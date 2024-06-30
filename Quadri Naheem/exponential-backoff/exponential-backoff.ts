@@ -7,7 +7,7 @@ async function mockApiCall(interval) {
         } else {
           reject(new Error("Mock API Call Failed"));
         }
-      }, interval); // Simulate a 1 second delay for the API call, which is increased exponentially for every failed attemp
+      }, interval); // Simulate a 1 second delay for the API call, which is increased exponentially for every failed attempt
     });
   }
   
