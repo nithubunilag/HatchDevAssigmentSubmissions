@@ -1,0 +1,141 @@
+* {
+  box-sizing: border-box;
+}
+
+#root {
+  width: 100vw;
+  min-height: 100vh;
+}
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color: #213547;
+  background-color: #ffffff;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+
+a:hover {
+  color: #747bff;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: '#ddd';
+  color: '#222';
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+button:hover {
+  border-color: #646cff;
+}
+
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+input,
+textarea,
+.input-group {
+  border: 1px solid #aaa;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  outline: none;
+  color: #213547;
+  font-size: 1rem;
+}
+
+input.error,
+textarea.error,
+.input-group.error {
+  border-color: red;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: row;
+  gap: 0;
+  padding: 0.25rem 0.5rem;
+}
+
+.input-group input,
+.input-group input:focus {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 0;
+}
+
+
+.input-group button,
+.input-group button:hover,
+.input-group button:focus {
+  background: none;
+  border-color: transparent;
+  outline: none;
+  padding: 0;
+}
+
+.input-group *:first-child {
+  border-radius: 0.5rem 0 0 0.5rem;
+}
+
+.input-group *:last-child {
+  border-radius: 0 0.5rem 0.5rem 0;
+}
+
+input:focus,
+textarea:focus,
+.input-group:has(input:focus) {
+  outline: 1.5px solid #555;
+  border: 1px solid #aaa;
+}
+
+input[type='checkbox'] {
+  outline: none;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}

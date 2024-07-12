@@ -1,0 +1,22 @@
+.menu {
+    width: 400px;
+    overflow-y: auto;
+    padding: 0 0.5rem;
+}
+
+.project-link {
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    margin: 0.5rem 0;
+    cursor: pointer;
+}
+
+.project-link:hover {
+    background-color: #eee;
+}
+
+.project-link.active {
+    background-color: #111;
+    color: #eee;
+}

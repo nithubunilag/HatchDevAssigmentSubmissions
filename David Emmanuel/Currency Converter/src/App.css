@@ -1,0 +1,27 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.currency-input {
+  margin: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  display: flex;
+}
+
+.currency-input input, .currency-input select {
+  padding: 5px;
+  border: none;
+}
+
+.currency-input input {
+  flex: 1;
+}
+
+.currency-input select {
+  border-left: 1px solid #ccc;
+  width: 175px;
+}

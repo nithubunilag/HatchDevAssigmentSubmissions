@@ -1,0 +1,24 @@
+.card {
+  padding: 2em;
+}
+
+.app {
+  display: flex;
+  height: 100vh;
+}
+
+main {
+  overflow-y: auto;
+}
+
+.app h1 {
+  margin: 1rem;
+}
+
+.description {
+  display: block;
+  background-color: #eee;
+  padding: 1rem;
+  margin: 0 1rem;
+  border-radius: 1rem;
+}

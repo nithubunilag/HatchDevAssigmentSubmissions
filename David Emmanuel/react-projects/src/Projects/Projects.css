@@ -1,0 +1,27 @@
+.project {
+    margin: 5rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.task-input {
+    outline: none;
+    border: 1px solid transparent;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.thumbnail {
+    border-radius: 7.5px;
+    height: 150px;
+    cursor: pointer;
+}
+
+.thumbnail:hover {
+    transform: scale(1.025);
+}
