@@ -1,0 +1,28 @@
+.app {
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.weather-card, .forecast-card {
+  border: 1px solid white;
+  padding: 20px;
+  margin: 10px;
+  border-radius: 8px;
+  background-color: teal;
+}
+
+.forecast-cards {
+  display: flex;
+  justify-content: space-around;
+}
+
+.search-bar input {
+  padding: 8px;
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+.search-bar button {
+  padding: 8px 16px;
+  font-size: 16px;
+}
