@@ -1,0 +1,46 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+body {
+  background-color: #520968;
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1, p {
+  font-size: 3.2em;
+  line-height: 1.1;
+  color: rgb(224, 178, 208);
+}
+
+p{
+  color: rgb(247, 5, 126);
+}
+
+button {
+  border-radius: 8px;
+  border: 3px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: rgb(167, 41, 123);
+  cursor: pointer;
+  transition: border-color 0.25s;
+  margin: 1rem;
+  color: rgb(224, 178, 208);
+}
+
+button:hover {
+  border: 3px solid rgb(224, 178, 208);
+}
+
+
+
+
+
+

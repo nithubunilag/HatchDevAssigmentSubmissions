@@ -1,0 +1,66 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: #520968;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+  color: rgb(224, 178, 208);
+}
+
+
+
+button, input {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+  color: rgb(224, 178, 208);
+  background-color: rgb(167, 41, 123);
+}
+
+input{
+  background-color: white;
+  margin-right: 20px;
+  color: rgb(167, 41, 123);
+}
+
+button:hover {
+  border: 3px solid rgb(224, 178, 208);
+}
+
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+
+li{
+  margin-left: 2rem;
+}
+
+.text{
+  margin-left: -150px;
+
+}
+.delete-button{
+  margin-bottom: 1rem;
+  margin-left: 2rem;
+  font-size: 0.9rem;
+}

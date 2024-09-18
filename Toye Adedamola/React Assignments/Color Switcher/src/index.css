@@ -1,0 +1,61 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: #410652;
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+}
+
+h1{
+  font-size: 3.2em;
+  line-height: 1.1;
+  color: rgb(224, 178, 208);
+}
+
+.color-box{
+  height: 200px;
+  margin-bottom: 20px;
+
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: rgb(167, 41, 123);
+  transition: border-color 0.25s;
+  margin: 1rem;
+  color: rgb(224, 178, 208);
+}
+
+button:hover {
+  border: 3px solid rgb(224, 178, 208);
+}
+
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+
