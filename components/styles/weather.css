@@ -1,0 +1,18 @@
+.weather-container {
+    padding: 20px;
+    background-color: #2c2c2e;
+    border-radius: 10px;
+    color: white;
+}
+
+.weather-info {
+    margin-top: 20px;
+}
+
+.weather-info h1 {
+    font-size: 48px;
+}
+
+.weather-info p {
+    font-size: 24px;
+}

@@ -1,0 +1,6 @@
+.main-content {
+    margin-left: 250px;
+    padding: 20px;
+    height: 100vh;
+    overflow-y: auto;
+}
